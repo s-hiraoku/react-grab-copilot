@@ -121,7 +121,7 @@ export default defineConfig([
     entry: { cli: "./src/cli.ts" },
     format: ["cjs"],
     noExternal: [
-      /@react-grab\/cli/,
+      /@hiraoku\/react-grab-cli/,
       "commander",
       "kleur",
       "ora",
