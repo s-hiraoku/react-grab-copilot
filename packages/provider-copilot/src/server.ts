@@ -1,4 +1,4 @@
-import { execa, type ResultPromise } from "execa";
+import { execa, execaSync, type ResultPromise } from "execa";
 import { pathToFileURL } from "node:url";
 import { Hono } from "hono";
 import { cors } from "hono/cors";
@@ -8,6 +8,49 @@ import fkill from "fkill";
 import pc from "picocolors";
 import type { AgentContext } from "@hiraoku/react-grab/core";
 import { DEFAULT_PORT, COMPLETED_STATUS } from "./constants.js";
+
+// Git undo state tracking
+let lastWorkspacePath: string | null = null;
+let lastStashRef: string | null = null;
+
+const saveGitState = (cwd: string): string | null => {
+  try {
+    // Check if we're in a git repo
+    execaSync("git", ["rev-parse", "--git-dir"], { cwd });
+
+    // Create a stash with untracked files
+    const result = execaSync("git", ["stash", "create", "--include-untracked"], { cwd });
+    const stashRef = result.stdout.trim();
+
+    // If stashRef is empty, there are no changes to stash
+    if (!stashRef) {
+      return null;
+    }
+
+    return stashRef;
+  } catch {
+    // Not a git repo or git not available
+    return null;
+  }
+};
+
+const restoreGitState = (cwd: string, stashRef: string): boolean => {
+  try {
+    // First, reset any changes made by copilot
+    execaSync("git", ["checkout", "."], { cwd });
+    // Clean untracked files
+    execaSync("git", ["clean", "-fd"], { cwd });
+
+    // If we have a stash ref, apply it
+    if (stashRef) {
+      execaSync("git", ["stash", "apply", stashRef], { cwd });
+    }
+
+    return true;
+  } catch {
+    return false;
+  }
+};
 
 const VERSION = process.env.VERSION ?? "0.0.0";
 
@@ -42,6 +85,10 @@ export const runAgent = async function* (
 
   const workspacePath =
     options?.cwd ?? process.env.REACT_GRAB_CWD ?? process.cwd();
+
+  // Save git state for undo functionality
+  lastWorkspacePath = workspacePath;
+  lastStashRef = saveGitState(workspacePath);
 
   let copilotProcess: ResultPromise | undefined;
   let stderrBuffer = "";
@@ -224,6 +271,23 @@ export const createServer = () => {
       activeProcesses.delete(sessionId);
     }
     return context.json({ status: "ok" });
+  });
+
+  app.post("/undo", (context) => {
+    if (!lastWorkspacePath) {
+      return context.json({ status: "error", message: "No session to undo" });
+    }
+
+    const success = restoreGitState(lastWorkspacePath, lastStashRef ?? "");
+
+    if (success) {
+      // Clear the state after successful undo
+      lastWorkspacePath = null;
+      lastStashRef = null;
+      return context.json({ status: "ok" });
+    } else {
+      return context.json({ status: "error", message: "Failed to restore git state" });
+    }
   });
 
   app.get("/health", (context) => {
