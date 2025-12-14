@@ -22,22 +22,34 @@ react-grab-copilot is a monorepo for grabbing UI elements and providing them to 
 - **Versioning**: Changesets
 - **AI SDK**: Claude Agent SDK
 
+## Package Naming
+
+All packages are published under the `@hiraoku` scope:
+
+| Package | npm Name |
+|---------|----------|
+| Core | `@hiraoku/react-grab` |
+| CLI | `@hiraoku/grab` |
+| CLI (internal) | `@hiraoku/react-grab-cli` |
+| Providers | `@hiraoku/react-grab-{provider}` |
+
 ## Project Structure
 
 ```
 packages/
-├── react-grab/          # Core library
-├── grab/                # Standalone grab package
+├── react-grab/          # Core library (@hiraoku/react-grab)
+├── grab/                # Standalone grab package (@hiraoku/grab)
 ├── cli/                 # CLI tool (@hiraoku/react-grab-cli)
-├── utils/               # Shared utilities
-├── provider-cursor/     # Cursor AI provider
-├── provider-claude-code/# Claude Code provider
-├── provider-gemini/     # Gemini provider
+├── utils/               # Shared utilities (private)
+├── provider-cursor/     # Cursor AI provider (port 5567)
+├── provider-claude-code/# Claude Code provider (port 4567)
+├── provider-gemini/     # Gemini provider (port 8567)
+├── provider-copilot/    # GitHub Copilot provider (port 11567)
 ├── provider-ami/        # AMI provider
-├── provider-amp/        # AMP provider
-├── provider-codex/      # Codex provider
-├── provider-opencode/   # OpenCode provider
-├── provider-droid/      # Droid provider
+├── provider-amp/        # AMP provider (port 9567)
+├── provider-codex/      # Codex provider (port 7567)
+├── provider-opencode/   # OpenCode provider (port 6567)
+├── provider-droid/      # Factory Droid provider (port 10567)
 ├── provider-visual-edit/# Visual Edit provider
 ├── web-extension/       # Browser extension
 ├── website/             # Next.js documentation site
@@ -73,7 +85,11 @@ pnpm release     # Build and publish
 
 ## Development Focus
 
-Current focus: **新たなAIプロバイダーの追加**
+Current focus: **@hiraoku スコープでの npm 公開準備**
+
+- All packages renamed to `@hiraoku/*` scope
+- Fork notices added to all packages
+- GitHub Copilot provider added (`@hiraoku/react-grab-copilot`)
 
 See `docs/TASKS.md` for detailed task list.
 
