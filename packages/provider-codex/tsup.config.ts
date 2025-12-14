@@ -19,7 +19,7 @@ export default defineConfig([
     target: "node18",
     platform: "node",
     treeshake: true,
-    noExternal: ["@react-grab/utils"],
+    noExternal: ["@hiraoku/react-grab-utils"],
     env: {
       VERSION: process.env.VERSION ?? packageJson.version,
     },
@@ -54,7 +54,7 @@ export default defineConfig([
     target: "esnext",
     platform: "browser",
     treeshake: true,
-    noExternal: ["@react-grab/utils"],
+    noExternal: ["@hiraoku/react-grab-utils"],
   },
   {
     entry: ["./src/client.ts"],

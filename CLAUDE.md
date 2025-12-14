@@ -1,5 +1,7 @@
 # CLAUDE.md - react-grab-copilot
 
+> This is a fork of [react-grab](https://github.com/aidenybai/react-grab) by [Aiden Bai](https://github.com/aidenybai) for personal testing and experimentation.
+
 ## Project Overview
 
 react-grab-copilot is a monorepo for grabbing UI elements and providing them to AI coding agents (Cursor, Claude Code, Gemini, etc.).
@@ -26,7 +28,7 @@ react-grab-copilot is a monorepo for grabbing UI elements and providing them to 
 packages/
 ├── react-grab/          # Core library
 ├── grab/                # Standalone grab package
-├── cli/                 # CLI tool (@react-grab/cli)
+├── cli/                 # CLI tool (@hiraoku/react-grab-cli)
 ├── utils/               # Shared utilities
 ├── provider-cursor/     # Cursor AI provider
 ├── provider-claude-code/# Claude Code provider

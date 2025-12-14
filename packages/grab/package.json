@@ -1,7 +1,7 @@
 {
-  "name": "grab",
+  "name": "@hiraoku/grab",
   "version": "0.0.88",
-  "description": "Grab any element in your app and give it to Cursor, Claude Code, or other AI coding agents.",
+  "description": "[Experimental Fork] Grab any element in your app and give it to Cursor, Claude Code, or other AI coding agents.",
   "keywords": [
     "react",
     "grab",
@@ -51,7 +51,7 @@
     "./dist/*.mjs": "./dist/*.mjs"
   },
   "bin": {
-    "grab": "./dist/cli.cjs"
+    "@hiraoku/grab": "./dist/cli.cjs"
   },
   "main": "dist/index.js",
   "module": "dist/index.js",

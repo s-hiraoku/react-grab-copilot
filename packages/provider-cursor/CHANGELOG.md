@@ -1,4 +1,4 @@
-# @react-grab/cursor
+# @hiraoku/react-grab-cursor
 
 ## 0.0.88
 

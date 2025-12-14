@@ -136,7 +136,7 @@ export default defineConfig([
         js: "#!/usr/bin/env node",
       };
       options.alias = {
-        "@react-grab/cli": "../cli/src/cli.ts",
+        "@hiraoku/react-grab-cli": "../cli/src/cli.ts",
       };
     },
   },

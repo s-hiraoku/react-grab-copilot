@@ -229,8 +229,8 @@ describe("detectInstalledAgents", () => {
     mockReadFileSync.mockReturnValue(
       JSON.stringify({
         devDependencies: {
-          "@react-grab/cursor": "1.0.0",
-          "@react-grab/claude-code": "1.0.0",
+          "@hiraoku/react-grab-cursor": "1.0.0",
+          "@hiraoku/react-grab-claude-code": "1.0.0",
         },
       }),
     );

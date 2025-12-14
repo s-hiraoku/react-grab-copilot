@@ -6,7 +6,7 @@ import { streamSSE } from "hono/streaming";
 import { serve } from "@hono/node-server";
 import fkill from "fkill";
 import pc from "picocolors";
-import type { AgentContext } from "react-grab/core";
+import type { AgentContext } from "@hiraoku/react-grab/core";
 import { DEFAULT_PORT, COMPLETED_STATUS } from "./constants.js";
 
 const VERSION = process.env.VERSION ?? "0.0.0";
@@ -20,7 +20,7 @@ import {
   formatSpawnError,
   type AgentMessage,
   type AgentCoreOptions,
-} from "@react-grab/utils/server";
+} from "@hiraoku/react-grab-utils/server";
 
 export interface CopilotAgentOptions extends AgentCoreOptions {
   model?: string;

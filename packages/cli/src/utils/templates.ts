@@ -5,12 +5,14 @@ export type AgentIntegration =
   | "codex"
   | "gemini"
   | "amp"
+  | "copilot"
+  | "droid"
   | "visual-edit"
   | "none";
 
 export const NEXT_APP_ROUTER_SCRIPT = `{process.env.NODE_ENV === "development" && (
           <Script
-            src="//unpkg.com/react-grab/dist/index.global.js"
+            src="//unpkg.com/@hiraoku/react-grab/dist/index.global.js"
             crossOrigin="anonymous"
             strategy="beforeInteractive"
           />
@@ -22,14 +24,14 @@ export const NEXT_APP_ROUTER_SCRIPT_WITH_AGENT = (
   if (agent === "none") return NEXT_APP_ROUTER_SCRIPT;
 
   const agentScript = `<Script
-              src="//unpkg.com/@react-grab/${agent}/dist/client.global.js"
+              src="//unpkg.com/@hiraoku/react-grab-${agent}/dist/client.global.js"
               strategy="lazyOnload"
             />`;
 
   return `{process.env.NODE_ENV === "development" && (
           <>
             <Script
-              src="//unpkg.com/react-grab/dist/index.global.js"
+              src="//unpkg.com/@hiraoku/react-grab/dist/index.global.js"
               strategy="beforeInteractive"
             />
             ${agentScript}
@@ -39,7 +41,7 @@ export const NEXT_APP_ROUTER_SCRIPT_WITH_AGENT = (
 
 export const NEXT_PAGES_ROUTER_SCRIPT = `{process.env.NODE_ENV === "development" && (
           <Script
-            src="//unpkg.com/react-grab/dist/index.global.js"
+            src="//unpkg.com/@hiraoku/react-grab/dist/index.global.js"
             crossOrigin="anonymous"
             strategy="beforeInteractive"
           />
@@ -51,14 +53,14 @@ export const NEXT_PAGES_ROUTER_SCRIPT_WITH_AGENT = (
   if (agent === "none") return NEXT_PAGES_ROUTER_SCRIPT;
 
   const agentScript = `<Script
-              src="//unpkg.com/@react-grab/${agent}/dist/client.global.js"
+              src="//unpkg.com/@hiraoku/react-grab-${agent}/dist/client.global.js"
               strategy="lazyOnload"
             />`;
 
   return `{process.env.NODE_ENV === "development" && (
           <>
             <Script
-              src="//unpkg.com/react-grab/dist/index.global.js"
+              src="//unpkg.com/@hiraoku/react-grab/dist/index.global.js"
               strategy="beforeInteractive"
             />
             ${agentScript}
@@ -68,7 +70,7 @@ export const NEXT_PAGES_ROUTER_SCRIPT_WITH_AGENT = (
 
 export const VITE_SCRIPT = `<script type="module">
       if (import.meta.env.DEV) {
-        import("react-grab");
+        import("@hiraoku/react-grab");
       }
     </script>`;
 
@@ -77,22 +79,22 @@ export const VITE_SCRIPT_WITH_AGENT = (agent: AgentIntegration): string => {
 
   return `<script type="module">
       if (import.meta.env.DEV) {
-        import("react-grab");
-        import("@react-grab/${agent}/client");
+        import("@hiraoku/react-grab");
+        import("@hiraoku/react-grab-${agent}/client");
       }
     </script>`;
 };
 
 export const WEBPACK_IMPORT = `if (process.env.NODE_ENV === "development") {
-  import("react-grab");
+  import("@hiraoku/react-grab");
 }`;
 
 export const WEBPACK_IMPORT_WITH_AGENT = (agent: AgentIntegration): string => {
   if (agent === "none") return WEBPACK_IMPORT;
 
   return `if (process.env.NODE_ENV === "development") {
-  import("react-grab");
-  import("@react-grab/${agent}/client");
+  import("@hiraoku/react-grab");
+  import("@hiraoku/react-grab-${agent}/client");
 }`;
 };
 

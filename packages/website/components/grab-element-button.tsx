@@ -23,7 +23,7 @@ interface GrabElementButtonProps {
 
 const toggleReactGrab = () => {
   if (typeof window === "undefined") return;
-  import("react-grab")
+  import("@hiraoku/react-grab")
     .then((reactGrab) => {
       const api = reactGrab.getGlobalApi();
       if (api) {
@@ -37,7 +37,7 @@ const toggleReactGrab = () => {
 
 const deactivateReactGrab = () => {
   if (typeof window === "undefined") return;
-  import("react-grab")
+  import("@hiraoku/react-grab")
     .then((reactGrab) => {
       const api = reactGrab.getGlobalApi();
       if (api) {
@@ -51,7 +51,7 @@ const deactivateReactGrab = () => {
 
 const updateReactGrabHotkey = (hotkey: RecordedHotkey | null) => {
   if (typeof window === "undefined") return;
-  import("react-grab")
+  import("@hiraoku/react-grab")
     .then((reactGrab) => {
       const api = reactGrab.getGlobalApi();
       if (api) {
@@ -244,7 +244,7 @@ export const GrabElementButton = ({
       setHasAdvanced(true);
       onSelect("button");
     } else if (typeof window !== "undefined") {
-      import("react-grab").catch((error) => {
+      import("@hiraoku/react-grab").catch((error) => {
         console.error("Failed to preload react-grab:", error);
       });
     }

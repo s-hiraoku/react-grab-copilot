@@ -1,4 +1,4 @@
-# @react-grab/opencode
+# @hiraoku/react-grab-opencode
 
 ## 0.0.88
 

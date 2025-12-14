@@ -1,6 +1,14 @@
 {
-  "name": "@react-grab/ami",
+  "name": "@hiraoku/react-grab-ami",
   "version": "0.0.88",
+  "description": "[Experimental Fork] Ami provider for React Grab",
+  "keywords": ["react-grab", "ami", "coding-agent", "fork", "experimental"],
+  "homepage": "https://github.com/aidenybai/react-grab",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aidenybai/react-grab.git"
+  },
+  "license": "MIT",
   "type": "module",
   "bin": {
     "react-grab-ami": "./dist/cli.cjs"
@@ -25,13 +33,13 @@
     "build": "rm -rf dist && NODE_ENV=production tsup"
   },
   "devDependencies": {
-    "@react-grab/utils": "workspace:*",
+    "@hiraoku/react-grab-utils": "workspace:*",
     "@types/node": "^22.10.7",
     "tsup": "^8.4.0"
   },
   "dependencies": {
     "ami-sdk": "^0.0.6",
     "picocolors": "^1.1.1",
-    "react-grab": "workspace:*"
+    "@hiraoku/react-grab": "workspace:*"
   }
 }

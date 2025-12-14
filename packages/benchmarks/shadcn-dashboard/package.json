@@ -39,7 +39,7 @@
     "react": "19.2.1",
     "react-day-picker": "^9.11.1",
     "react-dom": "19.2.1",
-    "react-grab": "workspace:*",
+    "@hiraoku/react-grab": "workspace:*",
     "recharts": "2.15.4",
     "sonner": "^2.0.7",
     "tailwind-merge": "^2.6.0",

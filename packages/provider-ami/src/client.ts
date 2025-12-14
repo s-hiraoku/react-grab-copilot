@@ -18,12 +18,12 @@ import type {
   AgentCompleteResult,
   init,
   ReactGrabAPI,
-} from "react-grab/core";
+} from "@hiraoku/react-grab/core";
 import {
   CONNECTION_CHECK_TTL_MS,
   createCachedConnectionChecker,
   getStoredAgentContext,
-} from "@react-grab/utils/client";
+} from "@hiraoku/react-grab-utils/client";
 
 export type { AgentCompleteResult };
 import { COMPLETED_STATUS } from "./constants.js";

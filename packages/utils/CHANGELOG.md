@@ -1,4 +1,4 @@
-# @react-grab/utils
+# @hiraoku/react-grab-utils
 
 ## 0.0.88
 

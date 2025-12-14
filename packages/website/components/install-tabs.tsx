@@ -154,7 +154,7 @@ export default function Document() {
       // first npm i react-grab
       // then in head:
       if (import.meta.env.DEV) {
-        const { init } = await import("react-grab/core");
+        const { init } = await import("@hiraoku/react-grab/core");
         init(${optionsArg});
       }
     </script>
@@ -172,7 +172,7 @@ export default function Document() {
       // first npm i react-grab
       // then in head:
       if (import.meta.env.DEV) {
-        import("react-grab");
+        import("@hiraoku/react-grab");
       }
     </script>
   </head>
@@ -202,7 +202,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 
 if (process.env.NODE_ENV === "development") {
-  import("react-grab/core").then(({ init }) => {
+  import("@hiraoku/react-grab/core").then(({ init }) => {
     init(${optionsArg});
   });
 }
@@ -221,7 +221,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 
 if (process.env.NODE_ENV === "development") {
-  import("react-grab");
+  import("@hiraoku/react-grab");
 }
 
 const root = ReactDOM.createRoot(

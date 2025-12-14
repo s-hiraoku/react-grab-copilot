@@ -1,4 +1,4 @@
-# @react-grab/ami
+# @hiraoku/react-grab-ami
 
 ## 0.0.88
 

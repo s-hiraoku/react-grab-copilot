@@ -1,5 +1,5 @@
-import { createVisualEditAgentProvider } from "@react-grab/visual-edit/client";
-import { init } from "react-grab/core";
+import { createVisualEditAgentProvider } from "@hiraoku/react-grab-visual-edit/client";
+import { init } from "@hiraoku/react-grab/core";
 
 declare global {
   interface Window {

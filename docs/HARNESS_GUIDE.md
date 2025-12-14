@@ -135,7 +135,7 @@ Set up required environment variables (see Token Configuration above).
 pnpm dev
 
 # Or start specific package
-pnpm --filter @react-grab/cli dev
+pnpm --filter @hiraoku/react-grab-cli dev
 ```
 
 ### 4. Use Available Tools

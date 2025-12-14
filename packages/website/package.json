@@ -1,5 +1,5 @@
 {
-  "name": "@react-grab/website",
+  "name": "@hiraoku/react-grab-website",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -15,7 +15,7 @@
     "edge >= 91"
   ],
   "dependencies": {
-    "@react-grab/visual-edit": "workspace:*",
+    "@hiraoku/react-grab-visual-edit": "workspace:*",
     "@vercel/analytics": "^1.5.0",
     "botid": "^1.5.10",
     "class-variance-authority": "^0.7.1",
@@ -27,7 +27,7 @@
     "pretty-ms": "^9.3.0",
     "react": "19.2.1",
     "react-dom": "19.2.1",
-    "react-grab": "workspace:*",
+    "@hiraoku/react-grab": "workspace:*",
     "recharts": "^3.4.1",
     "shiki": "^1.24.3",
     "tailwind-merge": "^3.4.0"

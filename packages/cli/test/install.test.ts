@@ -11,13 +11,13 @@ describe("getPackagesToInstall", () => {
   it("should return react-grab and agent package", () => {
     const packages = getPackagesToInstall("cursor", true);
 
-    expect(packages).toEqual(["react-grab", "@react-grab/cursor"]);
+    expect(packages).toEqual(["react-grab", "@hiraoku/react-grab-cursor"]);
   });
 
   it("should return only agent package when includeReactGrab is false", () => {
     const packages = getPackagesToInstall("claude-code", false);
 
-    expect(packages).toEqual(["@react-grab/claude-code"]);
+    expect(packages).toEqual(["@hiraoku/react-grab-claude-code"]);
   });
 
   it("should return empty array when no agent and includeReactGrab is false", () => {
@@ -31,7 +31,7 @@ describe("getPackagesToInstall", () => {
 
     for (const agent of agents) {
       const packages = getPackagesToInstall(agent, false);
-      expect(packages).toEqual([`@react-grab/${agent}`]);
+      expect(packages).toEqual([`@hiraoku/react-grab-${agent}`]);
     }
   });
 });

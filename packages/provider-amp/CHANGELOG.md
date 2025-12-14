@@ -1,4 +1,4 @@
-# @react-grab/amp
+# @hiraoku/react-grab-amp
 
 ## 0.0.88
 

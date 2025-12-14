@@ -10,11 +10,11 @@ export default defineConfig({
       name: "serve-workspace-dist",
       configureServer(server) {
         server.middlewares.use((req, res, next) => {
-          if (req.url?.startsWith("/@react-grab/")) {
+          if (req.url?.startsWith("/@hiraoku/react-grab-")) {
             const filePath = path.join(
               __dirname,
               "../react-grab/dist",
-              req.url.replace("/@react-grab/", ""),
+              req.url.replace("/@hiraoku/react-grab-", ""),
             );
             if (fs.existsSync(filePath)) {
               res.setHeader("Content-Type", "application/javascript");

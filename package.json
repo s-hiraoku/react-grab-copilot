@@ -2,20 +2,20 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "turbo run build --filter=react-grab --filter=@react-grab/cursor --filter=@react-grab/claude-code --filter=@react-grab/ami --filter=@react-grab/opencode --filter=@react-grab/codex --filter=@react-grab/gemini --filter=@react-grab/amp --filter=@hiraoku/react-grab-copilot --filter=@react-grab/cli --filter=@react-grab/utils --filter=@react-grab/visual-edit && pnpm --filter grab build",
-    "dev": "turbo dev --filter=react-grab --filter=@react-grab/cursor --filter=@react-grab/claude-code --filter=@react-grab/ami --filter=@react-grab/opencode --filter=@react-grab/codex --filter=@react-grab/gemini --filter=@react-grab/amp --filter=@hiraoku/react-grab-copilot --filter=@react-grab/cli --filter=@react-grab/utils --filter=@react-grab/visual-edit",
-    "lint": "pnpm --filter react-grab lint",
-    "lint:fix": "pnpm --filter react-grab lint:fix",
+    "build": "turbo run build --filter=@hiraoku/react-grab --filter=@hiraoku/react-grab-cursor --filter=@hiraoku/react-grab-claude-code --filter=@hiraoku/react-grab-ami --filter=@hiraoku/react-grab-opencode --filter=@hiraoku/react-grab-codex --filter=@hiraoku/react-grab-gemini --filter=@hiraoku/react-grab-amp --filter=@hiraoku/react-grab-copilot --filter=@hiraoku/react-grab-cli --filter=@hiraoku/react-grab-utils --filter=@hiraoku/react-grab-visual-edit && pnpm --filter @hiraoku/grab build",
+    "dev": "turbo dev --filter=@hiraoku/react-grab --filter=@hiraoku/react-grab-cursor --filter=@hiraoku/react-grab-claude-code --filter=@hiraoku/react-grab-ami --filter=@hiraoku/react-grab-opencode --filter=@hiraoku/react-grab-codex --filter=@hiraoku/react-grab-gemini --filter=@hiraoku/react-grab-amp --filter=@hiraoku/react-grab-copilot --filter=@hiraoku/react-grab-cli --filter=@hiraoku/react-grab-utils --filter=@hiraoku/react-grab-visual-edit",
+    "lint": "pnpm --filter @hiraoku/react-grab lint",
+    "lint:fix": "pnpm --filter @hiraoku/react-grab lint:fix",
     "format": "prettier --write .",
-    "check": "pnpm --filter react-grab check",
+    "check": "pnpm --filter @hiraoku/react-grab check",
     "changeset": "changeset",
     "version": "changeset version",
-    "prebump": "cp README.md packages/react-grab/README.md && pnpm --filter grab build",
+    "prebump": "cp README.md packages/react-grab/README.md && pnpm --filter @hiraoku/grab build",
     "bump": "changeset && changeset version",
     "release": "pnpm build && changeset publish",
     "release:beta": "pnpm build && changeset publish --tag beta",
-    "extension:dev": "pnpm --filter web-extension dev",
-    "extension:build": "pnpm --filter web-extension build"
+    "extension:dev": "pnpm --filter @hiraoku/react-grab-web-extension dev",
+    "extension:build": "pnpm --filter @hiraoku/react-grab-web-extension build"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.10",

@@ -1,17 +1,19 @@
-# @react-grab/cursor
+# @hiraoku/react-grab-cursor
+
+> **Note:** This is an **experimental fork** of [React Grab](https://github.com/aidenybai/react-grab) for testing and verification purposes. For production use, please refer to the original repository.
 
 Cursor agent provider for React Grab. Requires running a local server that interfaces with the Cursor Agent CLI.
 
 ## Installation
 
 ```bash
-npm install @react-grab/cursor
+npm install @hiraoku/react-grab-cursor
 # or
-pnpm add @react-grab/cursor
+pnpm add @hiraoku/react-grab-cursor
 # or
-bun add @react-grab/cursor
+bun add @hiraoku/react-grab-cursor
 # or
-yarn add @react-grab/cursor
+yarn add @hiraoku/react-grab-cursor
 ```
 
 ## Server Setup
@@ -23,7 +25,7 @@ The server runs on port `5567` by default.
 Start the server in the background before running your dev server:
 
 ```bash
-npx @react-grab/cursor@latest && pnpm run dev
+npx @hiraoku/react-grab-cursor@latest && pnpm run dev
 ```
 
 The server will run as a detached background process. **Note:** Stopping your dev server (Ctrl+C) won't stop the React Grab server. To stop it:
@@ -40,7 +42,7 @@ For better lifecycle management, start the server from your config file. This en
 
 ```ts
 // vite.config.ts
-import { startServer } from "@react-grab/cursor/server";
+import { startServer } from "@hiraoku/react-grab-cursor/server";
 
 if (process.env.NODE_ENV === "development") {
   startServer();
@@ -51,7 +53,7 @@ if (process.env.NODE_ENV === "development") {
 
 ```ts
 // next.config.ts
-import { startServer } from "@react-grab/cursor/server";
+import { startServer } from "@hiraoku/react-grab-cursor/server";
 
 if (process.env.NODE_ENV === "development") {
   startServer();
@@ -64,7 +66,7 @@ if (process.env.NODE_ENV === "development") {
 
 ```html
 <script src="//unpkg.com/react-grab/dist/index.global.js"></script>
-<script src="//unpkg.com/@react-grab/cursor/dist/client.global.js"></script>
+<script src="//unpkg.com/@hiraoku/react-grab-cursor/dist/client.global.js"></script>
 ```
 
 ### Next.js
@@ -85,7 +87,7 @@ export default function RootLayout({ children }) {
               strategy="beforeInteractive"
             />
             <Script
-              src="//unpkg.com/@react-grab/cursor/dist/client.global.js"
+              src="//unpkg.com/@hiraoku/react-grab-cursor/dist/client.global.js"
               strategy="lazyOnload"
             />
           </>
@@ -100,7 +102,7 @@ export default function RootLayout({ children }) {
 ### ES Module
 
 ```tsx
-import { attachAgent } from "@react-grab/cursor/client";
+import { attachAgent } from "@hiraoku/react-grab-cursor/client";
 
 attachAgent();
 ```

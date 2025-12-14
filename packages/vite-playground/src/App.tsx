@@ -1,4 +1,4 @@
-import { TodoList } from "@react-grab/next-playground/components/todo-list";
+import { TodoList } from "@hiraoku/react-grab-next-playground/components/todo-list";
 
 export default function App() {
   return (

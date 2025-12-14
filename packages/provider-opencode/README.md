@@ -1,17 +1,19 @@
-# @react-grab/opencode
+# @hiraoku/react-grab-opencode
+
+> **Note:** This is an **experimental fork** of [React Grab](https://github.com/aidenybai/react-grab) for testing and verification purposes. For production use, please refer to the original repository.
 
 OpenCode agent provider for React Grab. Requires running a local server that interfaces with the OpenCode CLI.
 
 ## Installation
 
 ```bash
-npm install @react-grab/opencode
+npm install @hiraoku/react-grab-opencode
 # or
-pnpm add @react-grab/opencode
+pnpm add @hiraoku/react-grab-opencode
 # or
-bun add @react-grab/opencode
+bun add @hiraoku/react-grab-opencode
 # or
-yarn add @react-grab/opencode
+yarn add @hiraoku/react-grab-opencode
 ```
 
 ## Server Setup
@@ -23,7 +25,7 @@ The server runs on port `6567` by default.
 Start the server in the background before running your dev server:
 
 ```bash
-npx @react-grab/opencode@latest && pnpm run dev
+npx @hiraoku/react-grab-opencode@latest && pnpm run dev
 ```
 
 The server will run as a detached background process. **Note:** Stopping your dev server (Ctrl+C) won't stop the React Grab server. To stop it:
@@ -40,7 +42,7 @@ For better lifecycle management, start the server from your config file. This en
 
 ```ts
 // vite.config.ts
-import { startServer } from "@react-grab/opencode/server";
+import { startServer } from "@hiraoku/react-grab-opencode/server";
 
 if (process.env.NODE_ENV === "development") {
   startServer();
@@ -51,7 +53,7 @@ if (process.env.NODE_ENV === "development") {
 
 ```ts
 // next.config.ts
-import { startServer } from "@react-grab/opencode/server";
+import { startServer } from "@hiraoku/react-grab-opencode/server";
 
 if (process.env.NODE_ENV === "development") {
   startServer();
@@ -66,7 +68,7 @@ if (process.env.NODE_ENV === "development") {
 
 ```html
 <script src="//unpkg.com/react-grab/dist/index.global.js"></script>
-<script src="//unpkg.com/@react-grab/opencode/dist/client.global.js"></script>
+<script src="//unpkg.com/@hiraoku/react-grab-opencode/dist/client.global.js"></script>
 ```
 
 ### Next.js
@@ -87,7 +89,7 @@ export default function RootLayout({ children }) {
               strategy="beforeInteractive"
             />
             <Script
-              src="//unpkg.com/@react-grab/opencode/dist/client.global.js"
+              src="//unpkg.com/@hiraoku/react-grab-opencode/dist/client.global.js"
               strategy="lazyOnload"
             />
           </>
@@ -102,7 +104,7 @@ export default function RootLayout({ children }) {
 ### ES Module
 
 ```tsx
-import { attachAgent } from "@react-grab/opencode/client";
+import { attachAgent } from "@hiraoku/react-grab-opencode/client";
 
 attachAgent();
 ```
@@ -112,7 +114,7 @@ attachAgent();
 You can configure the OpenCode agent provider:
 
 ```typescript
-import { createOpenCodeAgentProvider } from "@react-grab/opencode/client";
+import { createOpenCodeAgentProvider } from "@hiraoku/react-grab-opencode/client";
 
 const provider = createOpenCodeAgentProvider({
   serverUrl: "http://localhost:6567", // Custom server URL

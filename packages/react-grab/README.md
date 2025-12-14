@@ -1,8 +1,10 @@
 # <img src="https://github.com/aidenybai/react-grab/blob/main/.github/public/logo.png?raw=true" width="60" align="center" /> React Grab
 
-[![size](https://img.shields.io/bundlephobia/minzip/react-grab?label=gzip&style=flat&colorA=000000&colorB=000000)](https://bundlephobia.com/package/react-grab)
-[![version](https://img.shields.io/npm/v/react-grab?style=flat&colorA=000000&colorB=000000)](https://npmjs.com/package/react-grab)
-[![downloads](https://img.shields.io/npm/dt/react-grab.svg?style=flat&colorA=000000&colorB=000000)](https://npmjs.com/package/react-grab)
+> **Note:** This is an **experimental fork** of [React Grab](https://github.com/aidenybai/react-grab) by [Aiden Bai](https://github.com/aidenybai) for testing and verification purposes. For production use, please refer to the original repository.
+
+[![size](https://img.shields.io/bundlephobia/minzip/react-grab?label=gzip&style=flat&colorA=000000&colorB=000000)](https://bundlephobia.com/package/@hiraoku/react-grab)
+[![version](https://img.shields.io/npm/v/react-grab?style=flat&colorA=000000&colorB=000000)](https://npmjs.com/package/@hiraoku/react-grab)
+[![downloads](https://img.shields.io/npm/dt/react-grab.svg?style=flat&colorA=000000&colorB=000000)](https://npmjs.com/package/@hiraoku/react-grab)
 
 Select context for coding agents directly from your website
 
@@ -21,7 +23,7 @@ https://github.com/user-attachments/assets/fdb34329-b471-4b39-b433-0b1a27a94bd8
 Run this command to install React Grab into your project. Ensure you are running at project root (e.g. where the `next.config.ts` or `vite.config.ts` file is located).
 
 ```html
-npx grab@latest init
+npx @hiraoku/grab@latest init
 ```
 
 ## Manual Installation
@@ -42,7 +44,7 @@ export default function RootLayout({ children }) {
         {/* put this in the <head> */}
         {process.env.NODE_ENV === "development" && (
           <Script
-            src="//unpkg.com/react-grab/dist/index.global.js"
+            src="//unpkg.com/@hiraoku/react-grab/dist/index.global.js"
             crossOrigin="anonymous"
             strategy="beforeInteractive"
           />
@@ -68,7 +70,7 @@ export default function Document() {
         {/* put this in the <Head> */}
         {process.env.NODE_ENV === "development" && (
           <Script
-            src="//unpkg.com/react-grab/dist/index.global.js"
+            src="//unpkg.com/@hiraoku/react-grab/dist/index.global.js"
             crossOrigin="anonymous"
             strategy="beforeInteractive"
           />
@@ -92,10 +94,10 @@ Your `index.html` could look like this:
 <html lang="en">
   <head>
     <script type="module">
-      // first npm i react-grab
+      // first npm i @hiraoku/react-grab
       // then in head:
       if (import.meta.env.DEV) {
-        import("react-grab");
+        import("@hiraoku/react-grab");
       }
     </script>
   </head>
@@ -111,14 +113,14 @@ Your `index.html` could look like this:
 First, install React Grab:
 
 ```bash
-npm install react-grab
+npm install @hiraoku/react-grab
 ```
 
 Then add this at the top of your main entry file (e.g., `src/index.tsx` or `src/main.tsx`):
 
 ```tsx
 if (process.env.NODE_ENV === "development") {
-  import("react-grab");
+  import("@hiraoku/react-grab");
 }
 ```
 
@@ -138,7 +140,7 @@ The server runs on port `4567` and interfaces with the Claude Agent SDK. Add to 
 ```json
 {
   "scripts": {
-    "dev": "npx @react-grab/claude-code@latest && next dev"
+    "dev": "npx @hiraoku/react-grab-claude-code@latest && next dev"
   }
 }
 ```
@@ -146,9 +148,9 @@ The server runs on port `4567` and interfaces with the Claude Agent SDK. Add to 
 #### Client Setup
 
 ```html
-<script src="//unpkg.com/react-grab/dist/index.global.js"></script>
+<script src="//unpkg.com/@hiraoku/react-grab/dist/index.global.js"></script>
 <!-- add this in the <head> -->
-<script src="//unpkg.com/@react-grab/claude-code/dist/client.global.js"></script>
+<script src="//unpkg.com/@hiraoku/react-grab-claude-code/dist/client.global.js"></script>
 ```
 
 Or using Next.js `Script` component in your `app/layout.tsx`:
@@ -163,11 +165,11 @@ export default function RootLayout({ children }) {
         {process.env.NODE_ENV === "development" && (
           <>
             <Script
-              src="//unpkg.com/react-grab/dist/index.global.js"
+              src="//unpkg.com/@hiraoku/react-grab/dist/index.global.js"
               strategy="beforeInteractive"
             />
             <Script
-              src="//unpkg.com/@react-grab/claude-code/dist/client.global.js"
+              src="//unpkg.com/@hiraoku/react-grab-claude-code/dist/client.global.js"
               strategy="lazyOnload"
             />
           </>
@@ -193,7 +195,7 @@ The server runs on port `5567` and interfaces with the `cursor-agent` CLI. Add t
 ```json
 {
   "scripts": {
-    "dev": "npx @react-grab/cursor@latest && next dev"
+    "dev": "npx @hiraoku/react-grab-cursor@latest && next dev"
   }
 }
 ```
@@ -201,9 +203,9 @@ The server runs on port `5567` and interfaces with the `cursor-agent` CLI. Add t
 #### Client Setup
 
 ```html
-<script src="//unpkg.com/react-grab/dist/index.global.js"></script>
+<script src="//unpkg.com/@hiraoku/react-grab/dist/index.global.js"></script>
 <!-- add this in the <head> -->
-<script src="//unpkg.com/@react-grab/cursor/dist/client.global.js"></script>
+<script src="//unpkg.com/@hiraoku/react-grab-cursor/dist/client.global.js"></script>
 ```
 
 Or using Next.js `Script` component in your `app/layout.tsx`:
@@ -218,11 +220,11 @@ export default function RootLayout({ children }) {
         {process.env.NODE_ENV === "development" && (
           <>
             <Script
-              src="//unpkg.com/react-grab/dist/index.global.js"
+              src="//unpkg.com/@hiraoku/react-grab/dist/index.global.js"
               strategy="beforeInteractive"
             />
             <Script
-              src="//unpkg.com/@react-grab/cursor/dist/client.global.js"
+              src="//unpkg.com/@hiraoku/react-grab-cursor/dist/client.global.js"
               strategy="lazyOnload"
             />
           </>
@@ -246,7 +248,7 @@ The server runs on port `6567` and interfaces with the OpenCode CLI. Add to your
 ```json
 {
   "scripts": {
-    "dev": "npx @react-grab/opencode@latest && next dev"
+    "dev": "npx @hiraoku/react-grab-opencode@latest && next dev"
   }
 }
 ```
@@ -256,9 +258,9 @@ The server runs on port `6567` and interfaces with the OpenCode CLI. Add to your
 #### Client Setup
 
 ```html
-<script src="//unpkg.com/react-grab/dist/index.global.js"></script>
+<script src="//unpkg.com/@hiraoku/react-grab/dist/index.global.js"></script>
 <!-- add this in the <head> -->
-<script src="//unpkg.com/@react-grab/opencode/dist/client.global.js"></script>
+<script src="//unpkg.com/@hiraoku/react-grab-opencode/dist/client.global.js"></script>
 ```
 
 Or using Next.js `Script` component in your `app/layout.tsx`:
@@ -273,11 +275,11 @@ export default function RootLayout({ children }) {
         {process.env.NODE_ENV === "development" && (
           <>
             <Script
-              src="//unpkg.com/react-grab/dist/index.global.js"
+              src="//unpkg.com/@hiraoku/react-grab/dist/index.global.js"
               strategy="beforeInteractive"
             />
             <Script
-              src="//unpkg.com/@react-grab/opencode/dist/client.global.js"
+              src="//unpkg.com/@hiraoku/react-grab-opencode/dist/client.global.js"
               strategy="lazyOnload"
             />
           </>
@@ -301,7 +303,7 @@ The server runs on port `7567` and interfaces with the OpenAI Codex SDK. Add to 
 ```json
 {
   "scripts": {
-    "dev": "npx @react-grab/codex@latest && next dev"
+    "dev": "npx @hiraoku/react-grab-codex@latest && next dev"
   }
 }
 ```
@@ -311,9 +313,9 @@ The server runs on port `7567` and interfaces with the OpenAI Codex SDK. Add to 
 #### Client Setup
 
 ```html
-<script src="//unpkg.com/react-grab/dist/index.global.js"></script>
+<script src="//unpkg.com/@hiraoku/react-grab/dist/index.global.js"></script>
 <!-- add this in the <head> -->
-<script src="//unpkg.com/@react-grab/codex/dist/client.global.js"></script>
+<script src="//unpkg.com/@hiraoku/react-grab-codex/dist/client.global.js"></script>
 ```
 
 Or using Next.js `Script` component in your `app/layout.tsx`:
@@ -328,11 +330,11 @@ export default function RootLayout({ children }) {
         {process.env.NODE_ENV === "development" && (
           <>
             <Script
-              src="//unpkg.com/react-grab/dist/index.global.js"
+              src="//unpkg.com/@hiraoku/react-grab/dist/index.global.js"
               strategy="beforeInteractive"
             />
             <Script
-              src="//unpkg.com/@react-grab/codex/dist/client.global.js"
+              src="//unpkg.com/@hiraoku/react-grab-codex/dist/client.global.js"
               strategy="lazyOnload"
             />
           </>
@@ -356,7 +358,7 @@ The server runs on port `8567` and interfaces with the Gemini CLI. Add to your `
 ```json
 {
   "scripts": {
-    "dev": "npx @react-grab/gemini@latest && next dev"
+    "dev": "npx @hiraoku/react-grab-gemini@latest && next dev"
   }
 }
 ```
@@ -366,9 +368,9 @@ The server runs on port `8567` and interfaces with the Gemini CLI. Add to your `
 #### Client Setup
 
 ```html
-<script src="//unpkg.com/react-grab/dist/index.global.js"></script>
+<script src="//unpkg.com/@hiraoku/react-grab/dist/index.global.js"></script>
 <!-- add this in the <head> -->
-<script src="//unpkg.com/@react-grab/gemini/dist/client.global.js"></script>
+<script src="//unpkg.com/@hiraoku/react-grab-gemini/dist/client.global.js"></script>
 ```
 
 Or using Next.js `Script` component in your `app/layout.tsx`:
@@ -383,11 +385,11 @@ export default function RootLayout({ children }) {
         {process.env.NODE_ENV === "development" && (
           <>
             <Script
-              src="//unpkg.com/react-grab/dist/index.global.js"
+              src="//unpkg.com/@hiraoku/react-grab/dist/index.global.js"
               strategy="beforeInteractive"
             />
             <Script
-              src="//unpkg.com/@react-grab/gemini/dist/client.global.js"
+              src="//unpkg.com/@hiraoku/react-grab-gemini/dist/client.global.js"
               strategy="lazyOnload"
             />
           </>
@@ -411,7 +413,7 @@ The server runs on port `9567` and interfaces with the [Amp SDK](https://ampcode
 ```json
 {
   "scripts": {
-    "dev": "npx @react-grab/amp@latest && next dev"
+    "dev": "npx @hiraoku/react-grab-amp@latest && next dev"
   }
 }
 ```
@@ -421,9 +423,9 @@ The server runs on port `9567` and interfaces with the [Amp SDK](https://ampcode
 #### Client Setup
 
 ```html
-<script src="//unpkg.com/react-grab/dist/index.global.js"></script>
+<script src="//unpkg.com/@hiraoku/react-grab/dist/index.global.js"></script>
 <!-- add this in the <head> -->
-<script src="//unpkg.com/@react-grab/amp/dist/client.global.js"></script>
+<script src="//unpkg.com/@hiraoku/react-grab-amp/dist/client.global.js"></script>
 ```
 
 Or using Next.js `Script` component in your `app/layout.tsx`:
@@ -438,11 +440,123 @@ export default function RootLayout({ children }) {
         {process.env.NODE_ENV === "development" && (
           <>
             <Script
-              src="//unpkg.com/react-grab/dist/index.global.js"
+              src="//unpkg.com/@hiraoku/react-grab/dist/index.global.js"
               strategy="beforeInteractive"
             />
             <Script
-              src="//unpkg.com/@react-grab/amp/dist/client.global.js"
+              src="//unpkg.com/@hiraoku/react-grab-amp/dist/client.global.js"
+              strategy="lazyOnload"
+            />
+          </>
+        )}
+      </head>
+      <body>{children}</body>
+    </html>
+  );
+}
+```
+
+</details>
+
+<details>
+<summary><strong>Factory Droid</strong></summary>
+
+#### Server Setup
+
+The server runs on port `10567` and interfaces with the [Factory CLI](https://docs.factory.ai/cli/droid-exec/overview). Add to your `package.json`:
+
+```json
+{
+  "scripts": {
+    "dev": "npx @hiraoku/react-grab-droid@latest && next dev"
+  }
+}
+```
+
+> **Note:** You must have [Factory CLI](https://app.factory.ai) installed (`curl -fsSL https://app.factory.ai/cli | sh`) and `FACTORY_API_KEY` environment variable set.
+
+#### Client Setup
+
+```html
+<script src="//unpkg.com/@hiraoku/react-grab/dist/index.global.js"></script>
+<!-- add this in the <head> -->
+<script src="//unpkg.com/@hiraoku/react-grab-droid/dist/client.global.js"></script>
+```
+
+Or using Next.js `Script` component in your `app/layout.tsx`:
+
+```jsx
+import Script from "next/script";
+
+export default function RootLayout({ children }) {
+  return (
+    <html>
+      <head>
+        {process.env.NODE_ENV === "development" && (
+          <>
+            <Script
+              src="//unpkg.com/@hiraoku/react-grab/dist/index.global.js"
+              strategy="beforeInteractive"
+            />
+            <Script
+              src="//unpkg.com/@hiraoku/react-grab-droid/dist/client.global.js"
+              strategy="lazyOnload"
+            />
+          </>
+        )}
+      </head>
+      <body>{children}</body>
+    </html>
+  );
+}
+```
+
+</details>
+
+<details>
+<summary><strong>GitHub Copilot</strong></summary>
+
+You must have the [GitHub Copilot CLI](https://docs.github.com/en/copilot/github-copilot-in-the-cli) installed and authenticated.
+
+#### Server Setup
+
+The server runs on port `11567` and interfaces with the GitHub Copilot CLI. Add to your `package.json`:
+
+```json
+{
+  "scripts": {
+    "dev": "npx @hiraoku/react-grab-copilot@latest && next dev"
+  }
+}
+```
+
+> **Note:** Run `copilot /login` to authenticate before using.
+
+#### Client Setup
+
+```html
+<script src="//unpkg.com/@hiraoku/react-grab/dist/index.global.js"></script>
+<!-- add this in the <head> -->
+<script src="//unpkg.com/@hiraoku/react-grab-copilot/dist/client.global.js"></script>
+```
+
+Or using Next.js `Script` component in your `app/layout.tsx`:
+
+```jsx
+import Script from "next/script";
+
+export default function RootLayout({ children }) {
+  return (
+    <html>
+      <head>
+        {process.env.NODE_ENV === "development" && (
+          <>
+            <Script
+              src="//unpkg.com/@hiraoku/react-grab/dist/index.global.js"
+              strategy="beforeInteractive"
+            />
+            <Script
+              src="//unpkg.com/@hiraoku/react-grab-copilot/dist/client.global.js"
               strategy="lazyOnload"
             />
           </>
@@ -461,7 +575,7 @@ export default function RootLayout({ children }) {
 React Grab provides an public customization API. Check out the [type definitions](https://github.com/aidenybai/react-grab/blob/main/packages/react-grab/src/types.ts) to see all available options for extending React Grab.
 
 ```typescript
-import { init } from "react-grab/core";
+import { init } from "@hiraoku/react-grab/core";
 
 const api = init({
   theme: {

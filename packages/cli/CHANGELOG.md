@@ -1,4 +1,4 @@
-# @react-grab/cli
+# @hiraoku/react-grab-cli
 
 ## 0.0.88
 

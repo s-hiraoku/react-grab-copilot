@@ -1,9 +1,17 @@
 {
-  "name": "@react-grab/cli",
+  "name": "@hiraoku/react-grab-cli",
   "version": "0.0.88",
+  "description": "[Experimental Fork] CLI for React Grab",
+  "keywords": ["react-grab", "cli", "fork", "experimental"],
+  "homepage": "https://github.com/aidenybai/react-grab",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aidenybai/react-grab.git"
+  },
+  "license": "MIT",
   "type": "module",
   "bin": {
-    "react-grab": "./dist/cli.js"
+    "@hiraoku/react-grab": "./dist/cli.js"
   },
   "exports": {
     ".": {

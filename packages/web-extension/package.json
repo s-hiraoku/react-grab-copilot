@@ -1,5 +1,5 @@
 {
-  "name": "@react-grab/web-extension",
+  "name": "@hiraoku/react-grab-web-extension",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -10,7 +10,7 @@
     "package": "./scripts/package.sh"
   },
   "dependencies": {
-    "react-grab": "workspace:*",
+    "@hiraoku/react-grab": "workspace:*",
     "react": "19.1.2",
     "react-dom": "19.1.2",
     "turndown": "^7.2.0",

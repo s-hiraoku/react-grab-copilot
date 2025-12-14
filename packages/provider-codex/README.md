@@ -1,11 +1,13 @@
-# @react-grab/codex
+# @hiraoku/react-grab-codex
+
+> **Note:** This is an **experimental fork** of [React Grab](https://github.com/aidenybai/react-grab) for testing and verification purposes. For production use, please refer to the original repository.
 
 OpenAI Codex provider for React Grab.
 
 ## Installation
 
 ```bash
-npm install @react-grab/codex
+npm install @hiraoku/react-grab-codex
 ```
 
 ## Usage
@@ -17,7 +19,7 @@ The server runs on port `7567` and interfaces with the Codex SDK. Add to your `p
 ```json
 {
   "scripts": {
-    "dev": "npx @react-grab/codex@latest && next dev"
+    "dev": "npx @hiraoku/react-grab-codex@latest && next dev"
   }
 }
 ```
@@ -29,13 +31,13 @@ The server runs on port `7567` and interfaces with the Codex SDK. Add to your `p
 Add the client script to your HTML:
 
 ```html
-<script src="//unpkg.com/@react-grab/codex/dist/client.global.js"></script>
+<script src="//unpkg.com/@hiraoku/react-grab-codex/dist/client.global.js"></script>
 ```
 
 Or import programmatically:
 
 ```ts
-import "@react-grab/codex/client";
+import "@hiraoku/react-grab-codex/client";
 ```
 
 ## Features

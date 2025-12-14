@@ -1,17 +1,19 @@
-# @react-grab/ami
+# @hiraoku/react-grab-ami
+
+> **Note:** This is an **experimental fork** of [React Grab](https://github.com/aidenybai/react-grab) for testing and verification purposes. For production use, please refer to the original repository.
 
 Ami agent provider for React Grab. This is a client-only provider that connects directly to [ami.dev](https://ami.dev).
 
 ## Installation
 
 ```bash
-npm install @react-grab/ami
+npm install @hiraoku/react-grab-ami
 # or
-pnpm add @react-grab/ami
+pnpm add @hiraoku/react-grab-ami
 # or
-bun add @react-grab/ami
+bun add @hiraoku/react-grab-ami
 # or
-yarn add @react-grab/ami
+yarn add @hiraoku/react-grab-ami
 ```
 
 ## Client Usage
@@ -20,7 +22,7 @@ yarn add @react-grab/ami
 
 ```html
 <script src="//unpkg.com/react-grab/dist/index.global.js"></script>
-<script src="//unpkg.com/@react-grab/ami/dist/client.global.js"></script>
+<script src="//unpkg.com/@hiraoku/react-grab-ami/dist/client.global.js"></script>
 ```
 
 ### Next.js
@@ -41,7 +43,7 @@ export default function RootLayout({ children }) {
               strategy="beforeInteractive"
             />
             <Script
-              src="//unpkg.com/@react-grab/ami/dist/client.global.js"
+              src="//unpkg.com/@hiraoku/react-grab-ami/dist/client.global.js"
               strategy="lazyOnload"
             />
           </>
@@ -56,7 +58,7 @@ export default function RootLayout({ children }) {
 ### ES Module
 
 ```tsx
-import { attachAgent } from "@react-grab/ami/client";
+import { attachAgent } from "@hiraoku/react-grab-ami/client";
 
 attachAgent();
 ```

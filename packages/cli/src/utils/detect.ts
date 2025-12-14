@@ -310,14 +310,14 @@ export const detectReactGrab = (projectRoot: string): boolean => {
 };
 
 const AGENT_PACKAGES = [
-  "@react-grab/claude-code",
-  "@react-grab/cursor",
-  "@react-grab/opencode",
-  "@react-grab/codex",
-  "@react-grab/gemini",
-  "@react-grab/amp",
-  "@react-grab/ami",
-  "@react-grab/visual-edit",
+  "@hiraoku/react-grab-claude-code",
+  "@hiraoku/react-grab-cursor",
+  "@hiraoku/react-grab-opencode",
+  "@hiraoku/react-grab-codex",
+  "@hiraoku/react-grab-gemini",
+  "@hiraoku/react-grab-amp",
+  "@hiraoku/react-grab-ami",
+  "@hiraoku/react-grab-visual-edit",
 ];
 
 export const detectUnsupportedFramework = (
@@ -374,7 +374,7 @@ export const detectInstalledAgents = (projectRoot: string): string[] => {
 
     return AGENT_PACKAGES.filter((agent) =>
       Boolean(allDependencies[agent]),
-    ).map((agent) => agent.replace("@react-grab/", ""));
+    ).map((agent) => agent.replace("@hiraoku/react-grab-", ""));
   } catch {
     return [];
   }

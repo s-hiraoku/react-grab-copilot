@@ -1,17 +1,19 @@
-# @react-grab/droid
+# @hiraoku/react-grab-droid
+
+> **Note:** This is an **experimental fork** of [React Grab](https://github.com/aidenybai/react-grab) for testing and verification purposes. For production use, please refer to the original repository.
 
 Factory Droid provider for React Grab. Requires running a local server that interfaces with the Factory CLI (`droid exec`).
 
 ## Installation
 
 ```bash
-npm install @react-grab/droid
+npm install @hiraoku/react-grab-droid
 # or
-pnpm add @react-grab/droid
+pnpm add @hiraoku/react-grab-droid
 # or
-bun add @react-grab/droid
+bun add @hiraoku/react-grab-droid
 # or
-yarn add @react-grab/droid
+yarn add @hiraoku/react-grab-droid
 ```
 
 ## Prerequisites
@@ -37,7 +39,7 @@ The server runs on port `10567` by default.
 Start the server in the background before running your dev server:
 
 ```bash
-npx @react-grab/droid@latest && pnpm run dev
+npx @hiraoku/react-grab-droid@latest && pnpm run dev
 ```
 
 The server will run as a detached background process. **Note:** Stopping your dev server (Ctrl+C) won't stop the React Grab server. To stop it:
@@ -54,7 +56,7 @@ For better lifecycle management, start the server from your config file. This en
 
 ```ts
 // vite.config.ts
-import { startServer } from "@react-grab/droid/server";
+import { startServer } from "@hiraoku/react-grab-droid/server";
 
 if (process.env.NODE_ENV === "development") {
   startServer();
@@ -65,7 +67,7 @@ if (process.env.NODE_ENV === "development") {
 
 ```ts
 // next.config.ts
-import { startServer } from "@react-grab/droid/server";
+import { startServer } from "@hiraoku/react-grab-droid/server";
 
 if (process.env.NODE_ENV === "development") {
   startServer();
@@ -78,7 +80,7 @@ if (process.env.NODE_ENV === "development") {
 
 ```html
 <script src="//unpkg.com/react-grab/dist/index.global.js"></script>
-<script src="//unpkg.com/@react-grab/droid/dist/client.global.js"></script>
+<script src="//unpkg.com/@hiraoku/react-grab-droid/dist/client.global.js"></script>
 ```
 
 ### Next.js
@@ -99,7 +101,7 @@ export default function RootLayout({ children }) {
               strategy="beforeInteractive"
             />
             <Script
-              src="//unpkg.com/@react-grab/droid/dist/client.global.js"
+              src="//unpkg.com/@hiraoku/react-grab-droid/dist/client.global.js"
               strategy="lazyOnload"
             />
           </>
@@ -114,7 +116,7 @@ export default function RootLayout({ children }) {
 ### ES Module
 
 ```tsx
-import { attachAgent } from "@react-grab/droid/client";
+import { attachAgent } from "@hiraoku/react-grab-droid/client";
 
 attachAgent();
 ```

@@ -1,1 +1,1 @@
-import "@react-grab/cli";
+import "@hiraoku/react-grab-cli";

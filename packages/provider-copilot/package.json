@@ -1,6 +1,15 @@
 {
   "name": "@hiraoku/react-grab-copilot",
   "version": "0.0.1",
+  "description": "[Experimental Fork] GitHub Copilot CLI provider for React Grab",
+  "keywords": ["react-grab", "copilot", "github-copilot", "coding-agent", "fork", "experimental"],
+  "homepage": "https://github.com/aidenybai/react-grab",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aidenybai/react-grab.git",
+    "directory": "packages/provider-copilot"
+  },
+  "license": "MIT",
   "type": "module",
   "bin": {
     "react-grab-copilot": "./dist/cli.cjs"
@@ -21,14 +30,15 @@
   },
   "browser": "dist/client.global.js",
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ],
   "scripts": {
     "dev": "tsup --watch",
     "build": "rm -rf dist && NODE_ENV=production tsup"
   },
   "devDependencies": {
-    "@react-grab/utils": "workspace:*",
+    "@hiraoku/react-grab-utils": "workspace:*",
     "@types/node": "^22.10.7",
     "tsup": "^8.4.0"
   },
@@ -38,6 +48,6 @@
     "fkill": "^9.0.0",
     "hono": "^4.0.0",
     "picocolors": "^1.1.1",
-    "react-grab": "workspace:*"
+    "@hiraoku/react-grab": "workspace:*"
   }
 }

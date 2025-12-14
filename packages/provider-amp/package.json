@@ -1,6 +1,14 @@
 {
-  "name": "@react-grab/amp",
+  "name": "@hiraoku/react-grab-amp",
   "version": "0.0.88",
+  "description": "[Experimental Fork] Amp provider for React Grab",
+  "keywords": ["react-grab", "amp", "coding-agent", "fork", "experimental"],
+  "homepage": "https://github.com/aidenybai/react-grab",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aidenybai/react-grab.git"
+  },
+  "license": "MIT",
   "type": "module",
   "bin": {
     "react-grab-amp": "./dist/cli.cjs"
@@ -28,7 +36,7 @@
     "build": "rm -rf dist && NODE_ENV=production tsup"
   },
   "devDependencies": {
-    "@react-grab/utils": "workspace:*",
+    "@hiraoku/react-grab-utils": "workspace:*",
     "@types/node": "^22.10.7",
     "tsup": "^8.4.0"
   },
@@ -39,6 +47,6 @@
     "fkill": "^9.0.0",
     "hono": "^4.0.0",
     "picocolors": "^1.1.1",
-    "react-grab": "workspace:*"
+    "@hiraoku/react-grab": "workspace:*"
   }
 }

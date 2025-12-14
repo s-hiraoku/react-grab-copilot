@@ -409,7 +409,7 @@ const AgentPage = () => {
                     lang="json"
                     code={`{
   "scripts": {
-    "dev": "npx @react-grab/claude-code@latest && next dev"
+    "dev": "npx @hiraoku/react-grab-claude-code@latest && next dev"
   }
 }`}
                   />
@@ -432,7 +432,7 @@ const AgentPage = () => {
                   <HighlightedCodeBlock
                     lang="html"
                     code={`<script src="//unpkg.com/react-grab/dist/index.global.js"></script>
-<script src="//unpkg.com/@react-grab/claude-code/dist/client.global.js"></script>`}
+<script src="//unpkg.com/@hiraoku/react-grab-claude-code/dist/client.global.js"></script>`}
                   />
                 </div>
               </div>
@@ -465,7 +465,7 @@ export default function RootLayout({ children }) {
               strategy="beforeInteractive"
             />
             <Script
-              src="//unpkg.com/@react-grab/claude-code/dist/client.global.js"
+              src="//unpkg.com/@hiraoku/react-grab-claude-code/dist/client.global.js"
               strategy="lazyOnload"
             />
           </>
@@ -508,7 +508,7 @@ export default function RootLayout({ children }) {
                     lang="json"
                     code={`{
   "scripts": {
-    "dev": "npx @react-grab/cursor@latest && next dev"
+    "dev": "npx @hiraoku/react-grab-cursor@latest && next dev"
   }
 }`}
                   />
@@ -530,7 +530,7 @@ export default function RootLayout({ children }) {
                   <HighlightedCodeBlock
                     lang="html"
                     code={`<script src="//unpkg.com/react-grab/dist/index.global.js"></script>
-<script src="//unpkg.com/@react-grab/cursor/dist/client.global.js"></script>`}
+<script src="//unpkg.com/@hiraoku/react-grab-cursor/dist/client.global.js"></script>`}
                   />
                 </div>
               </div>
@@ -563,7 +563,7 @@ export default function RootLayout({ children }) {
               strategy="beforeInteractive"
             />
             <Script
-              src="//unpkg.com/@react-grab/cursor/dist/client.global.js"
+              src="//unpkg.com/@hiraoku/react-grab-cursor/dist/client.global.js"
               strategy="lazyOnload"
             />
           </>
@@ -623,7 +623,7 @@ export default function RootLayout({ children }) {
                     lang="json"
                     code={`{
   "scripts": {
-    "dev": "npx @react-grab/opencode@latest && next dev"
+    "dev": "npx @hiraoku/react-grab-opencode@latest && next dev"
   }
 }`}
                   />
@@ -645,7 +645,7 @@ export default function RootLayout({ children }) {
                   <HighlightedCodeBlock
                     lang="html"
                     code={`<script src="//unpkg.com/react-grab/dist/index.global.js"></script>
-<script src="//unpkg.com/@react-grab/opencode/dist/client.global.js"></script>`}
+<script src="//unpkg.com/@hiraoku/react-grab-opencode/dist/client.global.js"></script>`}
                   />
                 </div>
               </div>
@@ -678,7 +678,7 @@ export default function RootLayout({ children }) {
               strategy="beforeInteractive"
             />
             <Script
-              src="//unpkg.com/@react-grab/opencode/dist/client.global.js"
+              src="//unpkg.com/@hiraoku/react-grab-opencode/dist/client.global.js"
               strategy="lazyOnload"
             />
           </>
@@ -716,7 +716,7 @@ export default function RootLayout({ children }) {
                     lang="json"
                     code={`{
   "scripts": {
-    "dev": "npx @react-grab/codex@latest && next dev"
+    "dev": "npx @hiraoku/react-grab-codex@latest && next dev"
   }
 }`}
                   />
@@ -738,7 +738,7 @@ export default function RootLayout({ children }) {
                   <HighlightedCodeBlock
                     lang="html"
                     code={`<script src="//unpkg.com/react-grab/dist/index.global.js"></script>
-<script src="//unpkg.com/@react-grab/codex/dist/client.global.js"></script>`}
+<script src="//unpkg.com/@hiraoku/react-grab-codex/dist/client.global.js"></script>`}
                   />
                 </div>
               </div>
@@ -771,7 +771,7 @@ export default function RootLayout({ children }) {
               strategy="beforeInteractive"
             />
             <Script
-              src="//unpkg.com/@react-grab/codex/dist/client.global.js"
+              src="//unpkg.com/@hiraoku/react-grab-codex/dist/client.global.js"
               strategy="lazyOnload"
             />
           </>
@@ -809,7 +809,7 @@ export default function RootLayout({ children }) {
                     lang="json"
                     code={`{
   "scripts": {
-    "dev": "npx @react-grab/gemini@latest && next dev"
+    "dev": "npx @hiraoku/react-grab-gemini@latest && next dev"
   }
 }`}
                   />
@@ -831,7 +831,7 @@ export default function RootLayout({ children }) {
                   <HighlightedCodeBlock
                     lang="html"
                     code={`<script src="//unpkg.com/react-grab/dist/index.global.js"></script>
-<script src="//unpkg.com/@react-grab/gemini/dist/client.global.js"></script>`}
+<script src="//unpkg.com/@hiraoku/react-grab-gemini/dist/client.global.js"></script>`}
                   />
                 </div>
               </div>
@@ -864,7 +864,7 @@ export default function RootLayout({ children }) {
               strategy="beforeInteractive"
             />
             <Script
-              src="//unpkg.com/@react-grab/gemini/dist/client.global.js"
+              src="//unpkg.com/@hiraoku/react-grab-gemini/dist/client.global.js"
               strategy="lazyOnload"
             />
           </>
@@ -911,7 +911,7 @@ export default function RootLayout({ children }) {
                     lang="json"
                     code={`{
   "scripts": {
-    "dev": "npx @react-grab/amp@latest && next dev"
+    "dev": "npx @hiraoku/react-grab-amp@latest && next dev"
   }
 }`}
                   />
@@ -933,7 +933,7 @@ export default function RootLayout({ children }) {
                   <HighlightedCodeBlock
                     lang="html"
                     code={`<script src="//unpkg.com/react-grab/dist/index.global.js"></script>
-<script src="//unpkg.com/@react-grab/amp/dist/client.global.js"></script>`}
+<script src="//unpkg.com/@hiraoku/react-grab-amp/dist/client.global.js"></script>`}
                   />
                 </div>
               </div>
@@ -966,7 +966,7 @@ export default function RootLayout({ children }) {
               strategy="beforeInteractive"
             />
             <Script
-              src="//unpkg.com/@react-grab/amp/dist/client.global.js"
+              src="//unpkg.com/@hiraoku/react-grab-amp/dist/client.global.js"
               strategy="lazyOnload"
             />
           </>
@@ -1014,7 +1014,7 @@ export default function RootLayout({ children }) {
                     lang="json"
                     code={`{
   "scripts": {
-    "dev": "npx @react-grab/droid@latest && next dev"
+    "dev": "npx @hiraoku/react-grab-droid@latest && next dev"
   }
 }`}
                   />
@@ -1036,7 +1036,7 @@ export default function RootLayout({ children }) {
                   <HighlightedCodeBlock
                     lang="html"
                     code={`<script src="//unpkg.com/react-grab/dist/index.global.js"></script>
-<script src="//unpkg.com/@react-grab/droid/dist/client.global.js"></script>`}
+<script src="//unpkg.com/@hiraoku/react-grab-droid/dist/client.global.js"></script>`}
                   />
                 </div>
               </div>
@@ -1069,7 +1069,7 @@ export default function RootLayout({ children }) {
               strategy="beforeInteractive"
             />
             <Script
-              src="//unpkg.com/@react-grab/droid/dist/client.global.js"
+              src="//unpkg.com/@hiraoku/react-grab-droid/dist/client.global.js"
               strategy="lazyOnload"
             />
           </>
@@ -1133,7 +1133,7 @@ export default function RootLayout({ children }) {
                   rel="noopener noreferrer"
                   className="text-neutral-300 hover:text-white underline underline-offset-4"
                 >
-                  @react-grab/claude-code
+                  @hiraoku/react-grab-claude-code
                 </a>
                 ,{" "}
                 <a
@@ -1142,7 +1142,7 @@ export default function RootLayout({ children }) {
                   rel="noopener noreferrer"
                   className="text-neutral-300 hover:text-white underline underline-offset-4"
                 >
-                  @react-grab/cursor
+                  @hiraoku/react-grab-cursor
                 </a>
                 ,{" "}
                 <a
@@ -1151,7 +1151,7 @@ export default function RootLayout({ children }) {
                   rel="noopener noreferrer"
                   className="text-neutral-300 hover:text-white underline underline-offset-4"
                 >
-                  @react-grab/opencode
+                  @hiraoku/react-grab-opencode
                 </a>
                 ,{" "}
                 <a
@@ -1160,7 +1160,7 @@ export default function RootLayout({ children }) {
                   rel="noopener noreferrer"
                   className="text-neutral-300 hover:text-white underline underline-offset-4"
                 >
-                  @react-grab/codex
+                  @hiraoku/react-grab-codex
                 </a>
                 ,{" "}
                 <a
@@ -1169,7 +1169,7 @@ export default function RootLayout({ children }) {
                   rel="noopener noreferrer"
                   className="text-neutral-300 hover:text-white underline underline-offset-4"
                 >
-                  @react-grab/gemini
+                  @hiraoku/react-grab-gemini
                 </a>
                 ,{" "}
                 <a
@@ -1178,7 +1178,7 @@ export default function RootLayout({ children }) {
                   rel="noopener noreferrer"
                   className="text-neutral-300 hover:text-white underline underline-offset-4"
                 >
-                  @react-grab/amp
+                  @hiraoku/react-grab-amp
                 </a>
                 ,{" "}
                 <a
@@ -1187,7 +1187,7 @@ export default function RootLayout({ children }) {
                   rel="noopener noreferrer"
                   className="text-neutral-300 hover:text-white underline underline-offset-4"
                 >
-                  @react-grab/droid
+                  @hiraoku/react-grab-droid
                 </a>
                 .
               </p>

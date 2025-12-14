@@ -70,7 +70,7 @@ export const start = new Command()
   )
   .option(
     "--provider <package>",
-    "provider package to run via npx (e.g., @react-grab/cursor)",
+    "provider package to run via npx (e.g., @hiraoku/react-grab-cursor)",
   )
   .action(async (urlArg, opts) => {
     console.log(
@@ -103,13 +103,13 @@ export const start = new Command()
           message: `Select a ${highlighter.info("provider")} to use:`,
           choices: [
             { title: "None", value: "" },
-            { title: "Claude Code", value: "@react-grab/claude-code" },
-            { title: "Cursor", value: "@react-grab/cursor" },
-            { title: "OpenCode", value: "@react-grab/opencode" },
-            { title: "Codex", value: "@react-grab/codex" },
-            { title: "Gemini", value: "@react-grab/gemini" },
-            { title: "Amp", value: "@react-grab/amp" },
-            { title: "Visual Edit", value: "@react-grab/visual-edit" },
+            { title: "Claude Code", value: "@hiraoku/react-grab-claude-code" },
+            { title: "Cursor", value: "@hiraoku/react-grab-cursor" },
+            { title: "OpenCode", value: "@hiraoku/react-grab-opencode" },
+            { title: "Codex", value: "@hiraoku/react-grab-codex" },
+            { title: "Gemini", value: "@hiraoku/react-grab-gemini" },
+            { title: "Amp", value: "@hiraoku/react-grab-amp" },
+            { title: "Visual Edit", value: "@hiraoku/react-grab-visual-edit" },
           ],
         });
 

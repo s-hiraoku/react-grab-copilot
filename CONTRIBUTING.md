@@ -1,5 +1,7 @@
 # Contributing to React Grab
 
+> This is a fork of [react-grab](https://github.com/aidenybai/react-grab) by [Aiden Bai](https://github.com/aidenybai) for personal testing and experimentation.
+
 Thanks for your interest in contributing to React Grab! This document provides guidelines and instructions for contributing.
 
 ## Getting Started
@@ -41,7 +43,7 @@ nr dev
 ```
 packages/
 ├── react-grab/          # Core library
-├── cli/                 # CLI installer (@react-grab/cli)
+├── cli/                 # CLI installer (@hiraoku/react-grab-cli)
 ├── provider-cursor/     # Cursor agent integration
 ├── provider-claude-code/  # Claude Code integration
 ├── provider-opencode/   # OpenCode integration
@@ -71,13 +73,13 @@ pnpm --filter vite-playground dev
 pnpm --filter next-playground dev
 
 # Agent playground (for testing agent provider integrations)
-pnpm --filter @react-grab/agent-playground dev:claude   # Claude Code
-pnpm --filter @react-grab/agent-playground dev:cursor   # Cursor
-pnpm --filter @react-grab/agent-playground dev:opencode # OpenCode
-pnpm --filter @react-grab/agent-playground dev:codex    # Codex
-pnpm --filter @react-grab/agent-playground dev:gemini   # Gemini
-pnpm --filter @react-grab/agent-playground dev:amp      # Amp
-pnpm --filter @react-grab/agent-playground dev:ami      # Ami
+pnpm --filter @hiraoku/react-grab-agent-playground dev:claude   # Claude Code
+pnpm --filter @hiraoku/react-grab-agent-playground dev:cursor   # Cursor
+pnpm --filter @hiraoku/react-grab-agent-playground dev:opencode # OpenCode
+pnpm --filter @hiraoku/react-grab-agent-playground dev:codex    # Codex
+pnpm --filter @hiraoku/react-grab-agent-playground dev:gemini   # Gemini
+pnpm --filter @hiraoku/react-grab-agent-playground dev:amp      # Amp
+pnpm --filter @hiraoku/react-grab-agent-playground dev:ami      # Ami
 ```
 
 The agent playground runs at `http://localhost:5174` and lets you test react-grab's agent provider API with multiple backends.
@@ -86,7 +88,7 @@ The agent playground runs at `http://localhost:5174` and lets you test react-gra
 
 ```bash
 # Run CLI tests
-pnpm --filter @react-grab/cli test
+pnpm --filter @hiraoku/react-grab-cli test
 ```
 
 ### Linting & Formatting
@@ -152,17 +154,19 @@ Follow the prompts to describe your changes. This helps maintain accurate change
 
 ## Reporting Issues
 
-Found a bug? Have a feature request? [Open an issue](https://github.com/aidenybai/react-grab/issues) with:
+Found a bug? Have a feature request? [Open an issue](https://github.com/s-hiraoku/react-grab-copilot/issues) with:
 
 - Clear description of the problem or request
 - Steps to reproduce (for bugs)
 - Expected vs actual behavior
 - Environment details (OS, browser, Node version)
 
-## Community
+## Upstream Community
 
-- Join our [Discord](https://discord.com/invite/G7zxfUzkm7) to discuss ideas and get help
-- Check existing [issues](https://github.com/aidenybai/react-grab/issues) before opening new ones
+For the original react-grab project:
+
+- [Discord](https://discord.com/invite/G7zxfUzkm7)
+- [Upstream Issues](https://github.com/aidenybai/react-grab/issues)
 
 ## License
 

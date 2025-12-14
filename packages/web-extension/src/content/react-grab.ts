@@ -1,5 +1,5 @@
-import { init } from "react-grab/core";
-import type { ReactGrabAPI, Options } from "react-grab";
+import { init } from "@hiraoku/react-grab/core";
+import type { ReactGrabAPI, Options } from "@hiraoku/react-grab";
 import TurndownService from "turndown";
 
 declare global {

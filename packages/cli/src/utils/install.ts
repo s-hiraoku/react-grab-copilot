@@ -38,11 +38,11 @@ export const getPackagesToInstall = (
   const packages: string[] = [];
 
   if (includeReactGrab) {
-    packages.push("react-grab");
+    packages.push("@hiraoku/react-grab");
   }
 
   if (agent !== "none") {
-    packages.push(`@react-grab/${agent}`);
+    packages.push(`@hiraoku/react-grab-${agent}`);
   }
 
   return packages;

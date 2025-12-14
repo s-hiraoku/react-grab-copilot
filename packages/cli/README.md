@@ -1,11 +1,11 @@
-# @react-grab/cli
+# @hiraoku/react-grab-cli
 
 Interactive CLI to install React Grab in your project.
 
 ## Usage
 
 ```bash
-npx @react-grab/cli
+npx @hiraoku/react-grab-cli
 ```
 
 ### Interactive Mode (default)
@@ -13,7 +13,7 @@ npx @react-grab/cli
 Running without options starts the interactive wizard:
 
 ```bash
-npx @react-grab/cli
+npx @hiraoku/react-grab-cli
 ```
 
 ### Non-Interactive Mode
@@ -22,13 +22,13 @@ Pass options to skip prompts:
 
 ```bash
 # Auto-detect everything and install without prompts
-npx @react-grab/cli -y
+npx @hiraoku/react-grab-cli -y
 
 # Specify framework and agent
-npx @react-grab/cli -f next -r app -a cursor -y
+npx @hiraoku/react-grab-cli -f next -r app -a cursor -y
 
 # Use specific package manager
-npx @react-grab/cli -p pnpm -a claude-code -y
+npx @hiraoku/react-grab-cli -p pnpm -a claude-code -y
 ```
 
 ## Options
@@ -48,22 +48,22 @@ npx @react-grab/cli -p pnpm -a claude-code -y
 
 ```bash
 # Interactive setup
-npx @react-grab/cli
+npx @hiraoku/react-grab-cli
 
 # Quick install with auto-detection
-npx @react-grab/cli -y
+npx @hiraoku/react-grab-cli -y
 
 # Next.js App Router with Cursor agent
-npx @react-grab/cli -f next -r app -a cursor -y
+npx @hiraoku/react-grab-cli -f next -r app -a cursor -y
 
 # Vite with Claude Code agent using pnpm
-npx @react-grab/cli -f vite -p pnpm -a claude-code -y
+npx @hiraoku/react-grab-cli -f vite -p pnpm -a claude-code -y
 
 # Add agent to existing React Grab installation
-npx @react-grab/cli -a opencode -y
+npx @hiraoku/react-grab-cli -a opencode -y
 
 # Only modify files (skip npm install)
-npx @react-grab/cli -a cursor --skip-install -y
+npx @hiraoku/react-grab-cli -a cursor --skip-install -y
 ```
 
 ## Supported Frameworks

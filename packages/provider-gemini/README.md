@@ -1,11 +1,13 @@
-# @react-grab/gemini
+# @hiraoku/react-grab-gemini
+
+> **Note:** This is an **experimental fork** of [React Grab](https://github.com/aidenybai/react-grab) for testing and verification purposes. For production use, please refer to the original repository.
 
 Google Gemini CLI provider for React Grab.
 
 ## Installation
 
 ```bash
-npm install @react-grab/gemini
+npm install @hiraoku/react-grab-gemini
 ```
 
 ## Usage
@@ -17,7 +19,7 @@ The server runs on port `8567` and interfaces with the Gemini CLI. Add to your `
 ```json
 {
   "scripts": {
-    "dev": "npx @react-grab/gemini@latest && next dev"
+    "dev": "npx @hiraoku/react-grab-gemini@latest && next dev"
   }
 }
 ```
@@ -29,13 +31,13 @@ The server runs on port `8567` and interfaces with the Gemini CLI. Add to your `
 Add the client script to your HTML:
 
 ```html
-<script src="//unpkg.com/@react-grab/gemini/dist/client.global.js"></script>
+<script src="//unpkg.com/@hiraoku/react-grab-gemini/dist/client.global.js"></script>
 ```
 
 Or import programmatically:
 
 ```ts
-import "@react-grab/gemini/client";
+import "@hiraoku/react-grab-gemini/client";
 ```
 
 ## Features

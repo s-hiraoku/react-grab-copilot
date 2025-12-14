@@ -1,5 +1,5 @@
 {
-  "name": "@react-grab/vite-playground",
+  "name": "@hiraoku/react-grab-vite-playground",
   "private": true,
   "type": "module",
   "scripts": {
@@ -8,10 +8,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@react-grab/next-playground": "workspace:*",
-    "@react-grab/opencode": "workspace:*",
+    "@hiraoku/react-grab-next-playground": "workspace:*",
+    "@hiraoku/react-grab-opencode": "workspace:*",
     "@hiraoku/react-grab-copilot": "workspace:*",
-    "react-grab": "workspace:*",
+    "@hiraoku/react-grab": "workspace:*",
     "clsx": "^2.1.1",
     "react": "19.1.2",
     "react-dom": "19.1.2",

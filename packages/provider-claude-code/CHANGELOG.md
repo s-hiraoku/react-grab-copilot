@@ -1,4 +1,4 @@
-# @react-grab/claude-code
+# @hiraoku/react-grab-claude-code
 
 ## 0.0.88
 

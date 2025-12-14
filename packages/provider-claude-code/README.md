@@ -1,17 +1,19 @@
-# @react-grab/claude-code
+# @hiraoku/react-grab-claude-code
+
+> **Note:** This is an **experimental fork** of [React Grab](https://github.com/aidenybai/react-grab) for testing and verification purposes. For production use, please refer to the original repository.
 
 Claude Code agent provider for React Grab. Requires running a local server that interfaces with the Claude Agent SDK.
 
 ## Installation
 
 ```bash
-npm install @react-grab/claude-code
+npm install @hiraoku/react-grab-claude-code
 # or
-pnpm add @react-grab/claude-code
+pnpm add @hiraoku/react-grab-claude-code
 # or
-bun add @react-grab/claude-code
+bun add @hiraoku/react-grab-claude-code
 # or
-yarn add @react-grab/claude-code
+yarn add @hiraoku/react-grab-claude-code
 ```
 
 ## Server Setup
@@ -23,7 +25,7 @@ The server runs on port `4567` by default.
 Start the server in the background before running your dev server:
 
 ```bash
-npx @react-grab/claude-code@latest && pnpm run dev
+npx @hiraoku/react-grab-claude-code@latest && pnpm run dev
 ```
 
 The server will run as a detached background process. **Note:** Stopping your dev server (Ctrl+C) won't stop the React Grab server. To stop it:
@@ -40,7 +42,7 @@ For better lifecycle management, start the server from your config file. This en
 
 ```ts
 // vite.config.ts
-import { startServer } from "@react-grab/claude-code/server";
+import { startServer } from "@hiraoku/react-grab-claude-code/server";
 
 if (process.env.NODE_ENV === "development") {
   startServer();
@@ -51,7 +53,7 @@ if (process.env.NODE_ENV === "development") {
 
 ```ts
 // next.config.ts
-import { startServer } from "@react-grab/claude-code/server";
+import { startServer } from "@hiraoku/react-grab-claude-code/server";
 
 if (process.env.NODE_ENV === "development") {
   startServer();
@@ -64,7 +66,7 @@ if (process.env.NODE_ENV === "development") {
 
 ```html
 <script src="//unpkg.com/react-grab/dist/index.global.js"></script>
-<script src="//unpkg.com/@react-grab/claude-code/dist/client.global.js"></script>
+<script src="//unpkg.com/@hiraoku/react-grab-claude-code/dist/client.global.js"></script>
 ```
 
 ### Next.js
@@ -85,7 +87,7 @@ export default function RootLayout({ children }) {
               strategy="beforeInteractive"
             />
             <Script
-              src="//unpkg.com/@react-grab/claude-code/dist/client.global.js"
+              src="//unpkg.com/@hiraoku/react-grab-claude-code/dist/client.global.js"
               strategy="lazyOnload"
             />
           </>
@@ -100,7 +102,7 @@ export default function RootLayout({ children }) {
 ### ES Module
 
 ```tsx
-import { attachAgent } from "@react-grab/claude-code/client";
+import { attachAgent } from "@hiraoku/react-grab-claude-code/client";
 
 attachAgent();
 ```

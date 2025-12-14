@@ -77,7 +77,7 @@ export default function RootLayout({
 
     expect(result.success).toBe(true);
     expect(result.newContent).toContain("react-grab");
-    expect(result.newContent).toContain("@react-grab/cursor");
+    expect(result.newContent).toContain("@hiraoku/react-grab-cursor");
   });
 
   it("should not duplicate if React Grab already exists", () => {
@@ -127,7 +127,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     const result = previewTransform("/test", "next", "app", "cursor", true);
 
     expect(result.success).toBe(true);
-    expect(result.newContent).toContain("@react-grab/cursor");
+    expect(result.newContent).toContain("@hiraoku/react-grab-cursor");
   });
 
   it("should fail when layout file not found", () => {
@@ -162,7 +162,7 @@ describe("previewTransform - Vite", () => {
     const result = previewTransform("/test", "vite", "unknown", "none", false);
 
     expect(result.success).toBe(true);
-    expect(result.newContent).toContain('import("react-grab")');
+    expect(result.newContent).toContain('import("@hiraoku/react-grab")');
     expect(result.newContent).toContain("import.meta.env.DEV");
   });
 
@@ -182,7 +182,7 @@ describe("previewTransform - Vite", () => {
 
     expect(result.success).toBe(true);
     expect(result.newContent).toContain("react-grab");
-    expect(result.newContent).toContain("@react-grab/opencode");
+    expect(result.newContent).toContain("@hiraoku/react-grab-opencode");
   });
 
   it("should add agent to existing React Grab installation", () => {
@@ -191,7 +191,7 @@ describe("previewTransform - Vite", () => {
   <head>
     <script type="module">
       if (import.meta.env.DEV) {
-        import("react-grab");
+        import("@hiraoku/react-grab");
       }
     </script>
   </head>
@@ -214,7 +214,7 @@ describe("previewTransform - Vite", () => {
     );
 
     expect(result.success).toBe(true);
-    expect(result.newContent).toContain("@react-grab/claude-code");
+    expect(result.newContent).toContain("@hiraoku/react-grab-claude-code");
   });
 });
 
@@ -244,7 +244,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     );
 
     expect(result.success).toBe(true);
-    expect(result.newContent).toContain('import("react-grab")');
+    expect(result.newContent).toContain('import("@hiraoku/react-grab")');
     expect(result.newContent).toContain("process.env.NODE_ENV");
   });
 
@@ -264,7 +264,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 
     expect(result.success).toBe(true);
     expect(result.newContent).toContain("react-grab");
-    expect(result.newContent).toContain("@react-grab/cursor");
+    expect(result.newContent).toContain("@hiraoku/react-grab-cursor");
   });
 });
 
@@ -333,7 +333,7 @@ export default function Document() {
     const result = previewTransform("/test", "next", "pages", "cursor", true);
 
     expect(result.success).toBe(true);
-    expect(result.newContent).toContain("@react-grab/cursor");
+    expect(result.newContent).toContain("@hiraoku/react-grab-cursor");
   });
 });
 
@@ -357,7 +357,7 @@ describe("previewTransform - Vite edge cases", () => {
     const result = previewTransform("/test", "vite", "unknown", "none", false);
 
     expect(result.success).toBe(true);
-    expect(result.newContent).toContain('import("react-grab")');
+    expect(result.newContent).toContain('import("@hiraoku/react-grab")');
   });
 
   it("should fail when index.html not found", () => {
@@ -388,7 +388,7 @@ describe("previewTransform - Webpack edge cases", () => {
 
   it("should add agent to existing Webpack installation", () => {
     const entryWithReactGrab = `if (process.env.NODE_ENV === "development") {
-  import("react-grab");
+  import("@hiraoku/react-grab");
 }
 
 import React from "react";
@@ -408,7 +408,7 @@ import ReactDOM from "react-dom/client";`;
     );
 
     expect(result.success).toBe(true);
-    expect(result.newContent).toContain("@react-grab/opencode");
+    expect(result.newContent).toContain("@hiraoku/react-grab-opencode");
   });
 });
 
@@ -549,7 +549,7 @@ describe("previewPackageJsonTransform", () => {
     const result = previewPackageJsonTransform("/test", "cursor", []);
 
     expect(result.success).toBe(true);
-    expect(result.newContent).toContain("npx @react-grab/cursor@latest &&");
+    expect(result.newContent).toContain("npx @hiraoku/react-grab-cursor@latest &&");
     expect(result.newContent).toContain("next dev --turbopack");
   });
 
@@ -561,7 +561,7 @@ describe("previewPackageJsonTransform", () => {
 
     expect(result.success).toBe(true);
     expect(result.newContent).toContain(
-      "npx @react-grab/claude-code@latest &&",
+      "npx @hiraoku/react-grab-claude-code@latest &&",
     );
   });
 
@@ -572,7 +572,7 @@ describe("previewPackageJsonTransform", () => {
     const result = previewPackageJsonTransform("/test", "opencode", []);
 
     expect(result.success).toBe(true);
-    expect(result.newContent).toContain("npx @react-grab/opencode@latest &&");
+    expect(result.newContent).toContain("npx @hiraoku/react-grab-opencode@latest &&");
   });
 
   it("should skip when agent is none", () => {
@@ -587,7 +587,7 @@ describe("previewPackageJsonTransform", () => {
       {
         name: "my-app",
         scripts: {
-          dev: "npx @react-grab/cursor@latest && next dev --turbopack",
+          dev: "npx @hiraoku/react-grab-cursor@latest && next dev --turbopack",
         },
       },
       null,
@@ -608,7 +608,7 @@ describe("previewPackageJsonTransform", () => {
       {
         name: "my-app",
         scripts: {
-          dev: "npx @react-grab/claude-code@latest && next dev",
+          dev: "npx @hiraoku/react-grab-claude-code@latest && next dev",
         },
       },
       null,
@@ -655,7 +655,7 @@ describe("previewPackageJsonTransform", () => {
     expect(result.success).toBe(true);
     expect(result.noChanges).toBe(true);
     expect(result.warning).toContain("No dev script found");
-    expect(result.warning).toContain("npx @react-grab/cursor@latest");
+    expect(result.warning).toContain("npx @hiraoku/react-grab-cursor@latest");
   });
 
   it("should use dev* script when no exact dev script exists", () => {
@@ -677,7 +677,7 @@ describe("previewPackageJsonTransform", () => {
     const result = previewPackageJsonTransform("/test", "cursor", []);
 
     expect(result.success).toBe(true);
-    expect(result.newContent).toContain("npx @react-grab/cursor@latest &&");
+    expect(result.newContent).toContain("npx @hiraoku/react-grab-cursor@latest &&");
     expect(result.newContent).toContain('"dev:server"');
     expect(result.message).toContain("dev:server");
   });

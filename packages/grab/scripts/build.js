@@ -46,24 +46,24 @@ const transformReadme = () => {
     )
     .replace(/bundlephobia\/minzip\/react-grab/g, "bundlephobia/minzip/grab")
     .replace(
-      /bundlephobia\.com\/package\/react-grab/g,
-      "bundlephobia.com/package/grab",
+      /bundlephobia\.com\/package\/@hiraoku\/react-grab/g,
+      "bundlephobia.com/package/@hiraoku/grab",
     )
     .replace(
       /img\.shields\.io\/npm\/v\/react-grab/g,
-      "img.shields.io/npm/v/grab",
+      "img.shields.io/npm/v/@hiraoku/grab",
     )
     .replace(
       /img\.shields\.io\/npm\/dt\/react-grab/g,
-      "img.shields.io/npm/dt/grab",
+      "img.shields.io/npm/dt/@hiraoku/grab",
     )
-    .replace(/npmjs\.com\/package\/react-grab/g, "npmjs.com/package/grab")
-    .replace(/npm install react-grab/g, "npm install grab")
-    .replace(/npm i react-grab/g, "npm i grab")
-    .replace(/npx react-grab@latest/g, "npx grab@latest")
-    .replace(/unpkg\.com\/react-grab/g, "unpkg.com/grab")
-    .replace(/import\("react-grab"\)/g, 'import("grab")')
-    .replace(/from "react-grab\/core"/g, 'from "grab/core"');
+    .replace(/npmjs\.com\/package\/@hiraoku\/react-grab/g, "npmjs.com/package/@hiraoku/grab")
+    .replace(/npm install @hiraoku\/react-grab/g, "npm install @hiraoku/grab")
+    .replace(/npm i @hiraoku\/react-grab/g, "npm i @hiraoku/grab")
+    .replace(/npx @hiraoku\/grab@latest/g, "npx @hiraoku/grab@latest")
+    .replace(/unpkg\.com\/@hiraoku\/react-grab/g, "unpkg.com/@hiraoku/grab")
+    .replace(/import\("@hiraoku\/react-grab"\)/g, 'import("@hiraoku/grab")')
+    .replace(/from "@hiraoku\/react-grab\/core"/g, 'from "@hiraoku/grab/core"');
 
   fs.writeFileSync(destReadme, content);
   console.log("Generated grab/README.md from root README.md");

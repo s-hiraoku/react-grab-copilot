@@ -1,6 +1,14 @@
 {
-  "name": "@react-grab/visual-edit",
+  "name": "@hiraoku/react-grab-visual-edit",
   "version": "0.0.88",
+  "description": "[Experimental Fork] Visual Edit provider for React Grab",
+  "keywords": ["react-grab", "visual-edit", "coding-agent", "fork", "experimental"],
+  "homepage": "https://github.com/aidenybai/react-grab",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aidenybai/react-grab.git"
+  },
+  "license": "MIT",
   "type": "module",
   "bin": {
     "react-grab-visual-edit": "./dist/cli.cjs"
@@ -30,6 +38,6 @@
   "dependencies": {
     "@types/node": "^24.10.2",
     "picocolors": "^1.1.1",
-    "react-grab": "workspace:*"
+    "@hiraoku/react-grab": "workspace:*"
   }
 }

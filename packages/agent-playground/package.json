@@ -1,5 +1,5 @@
 {
-  "name": "@react-grab/agent-playground",
+  "name": "@hiraoku/react-grab-agent-playground",
   "version": "0.0.1",
   "private": true,
   "type": "module",
@@ -17,7 +17,7 @@
   "dependencies": {
     "react": "19.0.1",
     "react-dom": "19.0.1",
-    "react-grab": "workspace:*"
+    "@hiraoku/react-grab": "workspace:*"
   },
   "devDependencies": {
     "@types/react": "^19.0.0",

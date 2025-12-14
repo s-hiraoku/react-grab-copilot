@@ -1,4 +1,4 @@
-# @react-grab/gemini
+# @hiraoku/react-grab-gemini
 
 ## 0.0.88
 

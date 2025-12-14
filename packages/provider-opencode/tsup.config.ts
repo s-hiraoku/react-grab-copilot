@@ -40,7 +40,7 @@ export default defineConfig([
     target: "esnext",
     platform: "browser",
     treeshake: true,
-    noExternal: ["@react-grab/utils"],
+    noExternal: ["@hiraoku/react-grab-utils"],
   },
   {
     entry: ["./src/client.ts"],

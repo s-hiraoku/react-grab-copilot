@@ -5,8 +5,8 @@ import type {
   AgentCompleteResult,
   init,
   ReactGrabAPI,
-} from "react-grab/core";
-import { copyContent, formatElementInfo } from "react-grab/core";
+} from "@hiraoku/react-grab/core";
+import { copyContent, formatElementInfo } from "@hiraoku/react-grab/core";
 
 export type { AgentCompleteResult };
 

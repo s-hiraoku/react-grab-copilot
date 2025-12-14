@@ -1,4 +1,4 @@
-import packageJson from "react-grab/package.json";
+import packageJson from "@hiraoku/react-grab/package.json";
 
 export const dynamic = "force-dynamic";
 

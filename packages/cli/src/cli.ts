@@ -1,5 +1,5 @@
 // HACK: suppress util._extend deprecation warning from http-proxy-middleware
-process.noDeprecation = true;
+(process as unknown as { noDeprecation: boolean }).noDeprecation = true;
 
 import { Command } from "commander";
 import { add } from "./commands/add.js";

@@ -1,4 +1,4 @@
-# @react-grab/visual-edit
+# @hiraoku/react-grab-visual-edit
 
 ## 0.0.88
 

@@ -1,4 +1,4 @@
-# @react-grab/codex
+# @hiraoku/react-grab-codex
 
 ## 0.0.88
 

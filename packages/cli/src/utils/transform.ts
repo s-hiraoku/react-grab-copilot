@@ -172,7 +172,7 @@ const addAgentToExistingNextApp = (
     };
   }
 
-  const agentPackage = `@react-grab/${agent}`;
+  const agentPackage = `@hiraoku/react-grab-${agent}`;
   if (originalContent.includes(agentPackage)) {
     return {
       success: true,
@@ -226,7 +226,7 @@ const addAgentToExistingVite = (
     };
   }
 
-  const agentPackage = `@react-grab/${agent}`;
+  const agentPackage = `@hiraoku/react-grab-${agent}`;
   if (originalContent.includes(agentPackage)) {
     return {
       success: true,
@@ -278,7 +278,7 @@ const addAgentToExistingWebpack = (
     };
   }
 
-  const agentPackage = `@react-grab/${agent}`;
+  const agentPackage = `@hiraoku/react-grab-${agent}`;
   if (originalContent.includes(agentPackage)) {
     return {
       success: true,
@@ -669,12 +669,12 @@ export const transformProject = (
 };
 
 const AGENT_PREFIXES: Record<string, string> = {
-  "claude-code": "npx @react-grab/claude-code@latest &&",
-  cursor: "npx @react-grab/cursor@latest &&",
-  opencode: "npx @react-grab/opencode@latest &&",
-  codex: "npx @react-grab/codex@latest &&",
-  gemini: "npx @react-grab/gemini@latest &&",
-  amp: "npx @react-grab/amp@latest &&",
+  "claude-code": "npx @hiraoku/react-grab-claude-code@latest &&",
+  cursor: "npx @hiraoku/react-grab-cursor@latest &&",
+  opencode: "npx @hiraoku/react-grab-opencode@latest &&",
+  codex: "npx @hiraoku/react-grab-codex@latest &&",
+  gemini: "npx @hiraoku/react-grab-gemini@latest &&",
+  amp: "npx @hiraoku/react-grab-amp@latest &&",
 };
 
 export const previewPackageJsonTransform = (
@@ -957,7 +957,7 @@ const addOptionsToViteScript = (
   }
 
   const optionsJson = formatOptionsAsJson(options);
-  const newImport = `import("react-grab").then((m) => m.init(${optionsJson}))`;
+  const newImport = `import("@hiraoku/react-grab").then((m) => m.init(${optionsJson}))`;
 
   const newContent = originalContent.replace(reactGrabImportMatch[0], newImport);
 
@@ -988,7 +988,7 @@ const addOptionsToWebpackImport = (
   }
 
   const optionsJson = formatOptionsAsJson(options);
-  const newImport = `import("react-grab").then((m) => m.init(${optionsJson}))`;
+  const newImport = `import("@hiraoku/react-grab").then((m) => m.init(${optionsJson}))`;
 
   const newContent = originalContent.replace(reactGrabImportMatch[0], newImport);
 
