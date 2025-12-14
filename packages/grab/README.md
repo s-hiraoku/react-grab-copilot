@@ -1,524 +1,33 @@
-# <img src="https://github.com/aidenybai/react-grab/blob/main/.github/public/logo.png?raw=true" width="60" align="center" /> Grab
+# React Grab
 
-[![size](https://img.shields.io/bundlephobia/minzip/grab?label=gzip&style=flat&colorA=000000&colorB=000000)](https://bundlephobia.com/package/@hiraoku/grab)
-[![version](https://img.shields.io/npm/v/@hiraoku/grab?style=flat&colorA=000000&colorB=000000)](https://npmjs.com/package/@hiraoku/grab)
-[![downloads](https://img.shields.io/npm/dt/@hiraoku/grab.svg?style=flat&colorA=000000&colorB=000000)](https://npmjs.com/package/@hiraoku/grab)
+> This is a fork of [react-grab](https://github.com/aidenybai/react-grab) by [Aiden Bai](https://github.com/aidenybai) for personal testing and experimentation with additional AI provider integrations.
 
-Select context for coding agents directly from your website
+Select context for coding agents directly from your website. Point at any element and it'll send the file name, React component, and HTML source code to your AI coding agent.
 
-How? Point at any element and it'll send the file name, React component, and HTML source code.
+## Supported AI Agents
 
-It makes tools like Cursor, Claude Code, Copilot run up to [**3× faster**](https://react-grab.com/blog/intro) and more accurate.
-
-### [Try out a demo! →](https://react-grab.com)
-
-https://github.com/user-attachments/assets/fdb34329-b471-4b39-b433-0b1a27a94bd8
+| Agent | Package | Port |
+|-------|---------|------|
+| Claude Code | `@hiraoku/react-grab-claude-code` | 4567 |
+| Cursor | `@hiraoku/react-grab-cursor` | 5567 |
+| OpenCode | `@hiraoku/react-grab-opencode` | 6567 |
+| Codex | `@hiraoku/react-grab-codex` | 7567 |
+| Gemini | `@hiraoku/react-grab-gemini` | 8567 |
+| Amp | `@hiraoku/react-grab-amp` | 9567 |
+| Factory Droid | `@hiraoku/react-grab-droid` | 10567 |
+| GitHub Copilot | `@hiraoku/react-grab-copilot` | 11567 |
 
 ## Install
 
-> [**Install using Cursor**](https://cursor.com/link/prompt?text=1.+Run+curl+-s+https%3A%2F%2Freact-grab.com%2Fllms.txt+%0A2.+Understand+the+content+and+follow+the+instructions+to+install+React+Grab.%0A3.+Tell+the+user+to+refresh+their+local+app+and+explain+how+to+use+React+Grab)
-
-Run this command to install React Grab into your project. Ensure you are running at project root (e.g. where the `next.config.ts` or `vite.config.ts` file is located).
-
-```html
+```bash
 npx @hiraoku/grab@latest init
 ```
 
-## Manual Installation
+## Quick Start
 
-If you're using a React framework or build tool, view instructions below:
+### 1. Server Setup
 
-#### Next.js (App router)
-
-Add this inside of your `app/layout.tsx`:
-
-```jsx
-import Script from "next/script";
-
-export default function RootLayout({ children }) {
-  return (
-    <html>
-      <head>
-        {/* put this in the <head> */}
-        {process.env.NODE_ENV === "development" && (
-          <Script
-            src="//unpkg.com/@hiraoku/grab/dist/index.global.js"
-            crossOrigin="anonymous"
-            strategy="beforeInteractive"
-          />
-        )}
-      </head>
-      <body>{children}</body>
-    </html>
-  );
-}
-```
-
-#### Next.js (Pages router)
-
-Add this into your `pages/_document.tsx`:
-
-```jsx
-import { Html, Head, Main, NextScript } from "next/document";
-
-export default function Document() {
-  return (
-    <Html lang="en">
-      <Head>
-        {/* put this in the <Head> */}
-        {process.env.NODE_ENV === "development" && (
-          <Script
-            src="//unpkg.com/@hiraoku/grab/dist/index.global.js"
-            crossOrigin="anonymous"
-            strategy="beforeInteractive"
-          />
-        )}
-      </Head>
-      <body>
-        <Main />
-        <NextScript />
-      </body>
-    </Html>
-  );
-}
-```
-
-#### Vite
-
-Your `index.html` could look like this:
-
-```html
-<!doctype html>
-<html lang="en">
-  <head>
-    <script type="module">
-      // first npm i @hiraoku/grab
-      // then in head:
-      if (import.meta.env.DEV) {
-        import("@hiraoku/grab");
-      }
-    </script>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
-```
-
-#### Webpack
-
-First, install React Grab:
-
-```bash
-npm install @hiraoku/grab
-```
-
-Then add this at the top of your main entry file (e.g., `src/index.tsx` or `src/main.tsx`):
-
-```tsx
-if (process.env.NODE_ENV === "development") {
-  import("@hiraoku/grab");
-}
-```
-
-## Coding agent integration
-
-React Grab can send selected element context directly to your coding agent. This enables a workflow where you select a UI element and an agent automatically makes changes to your codebase.
-
-This means **no copying and pasting** - just select the element and let the agent do the rest. [Learn more →](https://react-grab.com/blog/agent)
-
-<details>
-<summary><strong>Claude Code</strong></summary>
-
-#### Server Setup
-
-The server runs on port `4567` and interfaces with the Claude Agent SDK. Add to your `package.json`:
-
-```json
-{
-  "scripts": {
-    "dev": "npx @hiraoku/react-grab-claude-code@latest && next dev"
-  }
-}
-```
-
-#### Client Setup
-
-```html
-<script src="//unpkg.com/@hiraoku/grab/dist/index.global.js"></script>
-<!-- add this in the <head> -->
-<script src="//unpkg.com/@hiraoku/grab-claude-code/dist/client.global.js"></script>
-```
-
-Or using Next.js `Script` component in your `app/layout.tsx`:
-
-```jsx
-import Script from "next/script";
-
-export default function RootLayout({ children }) {
-  return (
-    <html>
-      <head>
-        {process.env.NODE_ENV === "development" && (
-          <>
-            <Script
-              src="//unpkg.com/@hiraoku/grab/dist/index.global.js"
-              strategy="beforeInteractive"
-            />
-            <Script
-              src="//unpkg.com/@hiraoku/grab-claude-code/dist/client.global.js"
-              strategy="lazyOnload"
-            />
-          </>
-        )}
-      </head>
-      <body>{children}</body>
-    </html>
-  );
-}
-```
-
-</details>
-
-<details>
-<summary><strong>Cursor CLI</strong></summary>
-
-You must have the [`cursor-agent` CLI](https://cursor.com/docs/cli/overview) installed.
-
-#### Server Setup
-
-The server runs on port `5567` and interfaces with the `cursor-agent` CLI. Add to your `package.json`:
-
-```json
-{
-  "scripts": {
-    "dev": "npx @hiraoku/react-grab-cursor@latest && next dev"
-  }
-}
-```
-
-#### Client Setup
-
-```html
-<script src="//unpkg.com/@hiraoku/grab/dist/index.global.js"></script>
-<!-- add this in the <head> -->
-<script src="//unpkg.com/@hiraoku/grab-cursor/dist/client.global.js"></script>
-```
-
-Or using Next.js `Script` component in your `app/layout.tsx`:
-
-```jsx
-import Script from "next/script";
-
-export default function RootLayout({ children }) {
-  return (
-    <html>
-      <head>
-        {process.env.NODE_ENV === "development" && (
-          <>
-            <Script
-              src="//unpkg.com/@hiraoku/grab/dist/index.global.js"
-              strategy="beforeInteractive"
-            />
-            <Script
-              src="//unpkg.com/@hiraoku/grab-cursor/dist/client.global.js"
-              strategy="lazyOnload"
-            />
-          </>
-        )}
-      </head>
-      <body>{children}</body>
-    </html>
-  );
-}
-```
-
-</details>
-
-<details>
-<summary><strong>OpenCode</strong></summary>
-
-#### Server Setup
-
-The server runs on port `6567` and interfaces with the OpenCode CLI. Add to your `package.json`:
-
-```json
-{
-  "scripts": {
-    "dev": "npx @hiraoku/react-grab-opencode@latest && next dev"
-  }
-}
-```
-
-> **Note:** You must have [OpenCode](https://opencode.ai) installed (`npm i -g opencode-ai@latest`).
-
-#### Client Setup
-
-```html
-<script src="//unpkg.com/@hiraoku/grab/dist/index.global.js"></script>
-<!-- add this in the <head> -->
-<script src="//unpkg.com/@hiraoku/grab-opencode/dist/client.global.js"></script>
-```
-
-Or using Next.js `Script` component in your `app/layout.tsx`:
-
-```jsx
-import Script from "next/script";
-
-export default function RootLayout({ children }) {
-  return (
-    <html>
-      <head>
-        {process.env.NODE_ENV === "development" && (
-          <>
-            <Script
-              src="//unpkg.com/@hiraoku/grab/dist/index.global.js"
-              strategy="beforeInteractive"
-            />
-            <Script
-              src="//unpkg.com/@hiraoku/grab-opencode/dist/client.global.js"
-              strategy="lazyOnload"
-            />
-          </>
-        )}
-      </head>
-      <body>{children}</body>
-    </html>
-  );
-}
-```
-
-</details>
-
-<details>
-<summary><strong>Codex</strong></summary>
-
-#### Server Setup
-
-The server runs on port `7567` and interfaces with the OpenAI Codex SDK. Add to your `package.json`:
-
-```json
-{
-  "scripts": {
-    "dev": "npx @hiraoku/react-grab-codex@latest && next dev"
-  }
-}
-```
-
-> **Note:** You must have [Codex](https://github.com/openai/codex) installed (`npm i -g @openai/codex`).
-
-#### Client Setup
-
-```html
-<script src="//unpkg.com/@hiraoku/grab/dist/index.global.js"></script>
-<!-- add this in the <head> -->
-<script src="//unpkg.com/@hiraoku/grab-codex/dist/client.global.js"></script>
-```
-
-Or using Next.js `Script` component in your `app/layout.tsx`:
-
-```jsx
-import Script from "next/script";
-
-export default function RootLayout({ children }) {
-  return (
-    <html>
-      <head>
-        {process.env.NODE_ENV === "development" && (
-          <>
-            <Script
-              src="//unpkg.com/@hiraoku/grab/dist/index.global.js"
-              strategy="beforeInteractive"
-            />
-            <Script
-              src="//unpkg.com/@hiraoku/grab-codex/dist/client.global.js"
-              strategy="lazyOnload"
-            />
-          </>
-        )}
-      </head>
-      <body>{children}</body>
-    </html>
-  );
-}
-```
-
-</details>
-
-<details>
-<summary><strong>Gemini</strong></summary>
-
-#### Server Setup
-
-The server runs on port `8567` and interfaces with the Gemini CLI. Add to your `package.json`:
-
-```json
-{
-  "scripts": {
-    "dev": "npx @hiraoku/react-grab-gemini@latest && next dev"
-  }
-}
-```
-
-> **Note:** You must have [Gemini CLI](https://github.com/google-gemini/gemini-cli) installed.
-
-#### Client Setup
-
-```html
-<script src="//unpkg.com/@hiraoku/grab/dist/index.global.js"></script>
-<!-- add this in the <head> -->
-<script src="//unpkg.com/@hiraoku/grab-gemini/dist/client.global.js"></script>
-```
-
-Or using Next.js `Script` component in your `app/layout.tsx`:
-
-```jsx
-import Script from "next/script";
-
-export default function RootLayout({ children }) {
-  return (
-    <html>
-      <head>
-        {process.env.NODE_ENV === "development" && (
-          <>
-            <Script
-              src="//unpkg.com/@hiraoku/grab/dist/index.global.js"
-              strategy="beforeInteractive"
-            />
-            <Script
-              src="//unpkg.com/@hiraoku/grab-gemini/dist/client.global.js"
-              strategy="lazyOnload"
-            />
-          </>
-        )}
-      </head>
-      <body>{children}</body>
-    </html>
-  );
-}
-```
-
-</details>
-
-<details>
-<summary><strong>Amp</strong></summary>
-
-#### Server Setup
-
-The server runs on port `9567` and interfaces with the [Amp SDK](https://ampcode.com/manual/sdk). Add to your `package.json`:
-
-```json
-{
-  "scripts": {
-    "dev": "npx @hiraoku/react-grab-amp@latest && next dev"
-  }
-}
-```
-
-> **Note:** You must have an [Amp API key](https://ampcode.com/settings) set via `AMP_API_KEY` environment variable.
-
-#### Client Setup
-
-```html
-<script src="//unpkg.com/@hiraoku/grab/dist/index.global.js"></script>
-<!-- add this in the <head> -->
-<script src="//unpkg.com/@hiraoku/grab-amp/dist/client.global.js"></script>
-```
-
-Or using Next.js `Script` component in your `app/layout.tsx`:
-
-```jsx
-import Script from "next/script";
-
-export default function RootLayout({ children }) {
-  return (
-    <html>
-      <head>
-        {process.env.NODE_ENV === "development" && (
-          <>
-            <Script
-              src="//unpkg.com/@hiraoku/grab/dist/index.global.js"
-              strategy="beforeInteractive"
-            />
-            <Script
-              src="//unpkg.com/@hiraoku/grab-amp/dist/client.global.js"
-              strategy="lazyOnload"
-            />
-          </>
-        )}
-      </head>
-      <body>{children}</body>
-    </html>
-  );
-}
-```
-
-</details>
-
-<details>
-<summary><strong>Factory Droid</strong></summary>
-
-#### Server Setup
-
-The server runs on port `10567` and interfaces with the [Factory CLI](https://docs.factory.ai/cli/droid-exec/overview). Add to your `package.json`:
-
-```json
-{
-  "scripts": {
-    "dev": "npx @hiraoku/react-grab-droid@latest && next dev"
-  }
-}
-```
-
-> **Note:** You must have [Factory CLI](https://app.factory.ai) installed (`curl -fsSL https://app.factory.ai/cli | sh`) and `FACTORY_API_KEY` environment variable set.
-
-#### Client Setup
-
-```html
-<script src="//unpkg.com/@hiraoku/grab/dist/index.global.js"></script>
-<!-- add this in the <head> -->
-<script src="//unpkg.com/@hiraoku/grab-droid/dist/client.global.js"></script>
-```
-
-Or using Next.js `Script` component in your `app/layout.tsx`:
-
-```jsx
-import Script from "next/script";
-
-export default function RootLayout({ children }) {
-  return (
-    <html>
-      <head>
-        {process.env.NODE_ENV === "development" && (
-          <>
-            <Script
-              src="//unpkg.com/@hiraoku/grab/dist/index.global.js"
-              strategy="beforeInteractive"
-            />
-            <Script
-              src="//unpkg.com/@hiraoku/grab-droid/dist/client.global.js"
-              strategy="lazyOnload"
-            />
-          </>
-        )}
-      </head>
-      <body>{children}</body>
-    </html>
-  );
-}
-```
-
-</details>
-
-<details>
-<summary><strong>GitHub Copilot</strong></summary>
-
-You must have the [GitHub Copilot CLI](https://docs.github.com/en/copilot/github-copilot-in-the-cli) installed and authenticated.
-
-#### Server Setup
-
-The server runs on port `11567` and interfaces with the GitHub Copilot CLI. Add to your `package.json`:
+Add the agent server to your dev script in `package.json`:
 
 ```json
 {
@@ -528,17 +37,16 @@ The server runs on port `11567` and interfaces with the GitHub Copilot CLI. Add 
 }
 ```
 
-> **Note:** Run `copilot /login` to authenticate before using.
+### 2. Client Setup
 
-#### Client Setup
+Add these scripts to your HTML `<head>`:
 
 ```html
 <script src="//unpkg.com/@hiraoku/grab/dist/index.global.js"></script>
-<!-- add this in the <head> -->
 <script src="//unpkg.com/@hiraoku/grab-copilot/dist/client.global.js"></script>
 ```
 
-Or using Next.js `Script` component in your `app/layout.tsx`:
+Or with Next.js:
 
 ```jsx
 import Script from "next/script";
@@ -566,59 +74,21 @@ export default function RootLayout({ children }) {
 }
 ```
 
-</details>
+## Usage
 
-## Extending React Grab
+1. Start your dev server
+2. Hold `Option` (Mac) / `Alt` (Windows) and hover over elements
+3. Click to select, then the context is sent to your AI agent
 
-React Grab provides an public customization API. Check out the [type definitions](https://github.com/aidenybai/react-grab/blob/main/packages/react-grab/src/types.ts) to see all available options for extending React Grab.
+## Upstream
 
-```typescript
-import { init } from "@hiraoku/grab/core";
+This project is based on [react-grab](https://github.com/aidenybai/react-grab) by [Aiden Bai](https://github.com/aidenybai).
 
-const api = init({
-  theme: {
-    enabled: true, // disable all UI by setting to false
-    hue: 180, // shift colors by 180 degrees (pink → cyan/turquoise)
-    crosshair: {
-      enabled: false, // disable crosshair
-    },
-    elementLabel: {
-      enabled: false, // disable element label
-    },
-  },
+- [Original Repository](https://github.com/aidenybai/react-grab)
+- [Discord Community](https://discord.com/invite/G7zxfUzkm7)
 
-  onElementSelect: (element) => {
-    console.log("Selected:", element);
-  },
-  onCopySuccess: (elements, content) => {
-    console.log("Copied to clipboard:", content);
-  },
-  onStateChange: (state) => {
-    console.log("Active:", state.isActive);
-  },
-});
+## License
 
-api.activate();
-api.copyElement(document.querySelector(".my-element"));
-console.log(api.getState());
-```
+MIT License - Copyright (c) 2025 Aiden Bai
 
-## Resources & Contributing Back
-
-Want to try it out? Check the [our demo](https://react-grab.com).
-
-Looking to contribute back? Check the [Contributing Guide](https://github.com/aidenybai/react-grab/blob/main/CONTRIBUTING.md) out.
-
-Want to talk to the community? Hop in our [Discord](https://discord.com/invite/G7zxfUzkm7) and share your ideas and what you've build with React Grab.
-
-Find a bug? Head over to our [issue tracker](https://github.com/aidenybai/react-grab/issues) and we'll do our best to help. We love pull requests, too!
-
-We expect all contributors to abide by the terms of our [Code of Conduct](https://github.com/aidenybai/react-grab/blob/main/.github/CODE_OF_CONDUCT.md).
-
-[**→ Start contributing on GitHub**](https://github.com/aidenybai/react-grab/blob/main/CONTRIBUTING.md)
-
-### License
-
-React Grab is MIT-licensed open-source software.
-
-_Thank you to [Andrew Luetgers](https://github.com/andrewluetgers) for donating the `grab` npm package name._
+This fork is maintained by [@s-hiraoku](https://github.com/s-hiraoku).

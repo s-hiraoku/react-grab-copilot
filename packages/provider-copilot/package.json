@@ -1,8 +1,15 @@
 {
   "name": "@hiraoku/react-grab-copilot",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "[Experimental Fork] GitHub Copilot CLI provider for React Grab",
-  "keywords": ["react-grab", "copilot", "github-copilot", "coding-agent", "fork", "experimental"],
+  "keywords": [
+    "react-grab",
+    "copilot",
+    "github-copilot",
+    "coding-agent",
+    "fork",
+    "experimental"
+  ],
   "homepage": "https://github.com/aidenybai/react-grab",
   "repository": {
     "type": "git",

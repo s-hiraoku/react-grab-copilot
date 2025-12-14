@@ -5,7 +5,8 @@
   "fixed": [],
   "linked": [
     [
-      "react-grab",
+      "@hiraoku/react-grab",
+      "@hiraoku/grab",
       "@hiraoku/react-grab-claude-code",
       "@hiraoku/react-grab-ami",
       "@hiraoku/react-grab-cursor",
@@ -15,6 +16,7 @@
       "@hiraoku/react-grab-gemini",
       "@hiraoku/react-grab-amp",
       "@hiraoku/react-grab-droid",
+      "@hiraoku/react-grab-copilot",
       "@hiraoku/react-grab-cli",
       "@hiraoku/react-grab-utils"
     ]
