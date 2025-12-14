@@ -1,5 +1,11 @@
 # @hiraoku/react-grab-copilot
 
+## 0.1.1
+
+### Patch Changes
+
+- Add git-based undo functionality for Copilot provider
+
 ## 0.1.0
 
 ### Minor Changes
